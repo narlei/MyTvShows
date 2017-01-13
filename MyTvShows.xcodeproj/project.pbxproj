@@ -1,0 +1,883 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8A19956BE3338436854495C4 /* libPods-MyTvShowsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCDCE5ECA030417D4D4DFA5C /* libPods-MyTvShowsUITests.a */; };
+		8F3BF7F7A3C4A4DA7A86A60C /* libPods-MyTvShowsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 774D54B00B3AF19E86FF5DEC /* libPods-MyTvShowsTests.a */; };
+		9C1ED8551E27D0C400E4D694 /* database.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 9C1ED84D1E27D0C400E4D694 /* database.sqlite */; };
+		9C1ED8561E27D0C400E4D694 /* NAMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1ED84F1E27D0C400E4D694 /* NAMDatabase.m */; };
+		9C1ED8571E27D0C400E4D694 /* NAMDatabaseClasses.nam in Resources */ = {isa = PBXBuildFile; fileRef = 9C1ED8501E27D0C400E4D694 /* NAMDatabaseClasses.nam */; };
+		9C1ED8581E27D0C400E4D694 /* NAMEncrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1ED8521E27D0C400E4D694 /* NAMEncrypt.m */; };
+		9C1ED8591E27D0C400E4D694 /* NAMObjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1ED8541E27D0C400E4D694 /* NAMObjectModel.m */; };
+		9C1ED8621E27D12000E4D694 /* MTSObjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1ED8611E27D12000E4D694 /* MTSObjectModel.m */; };
+		9C1ED8671E27D12D00E4D694 /* MTSShow.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1ED8641E27D12D00E4D694 /* MTSShow.m */; };
+		9C1ED8681E27D12D00E4D694 /* MTSShowIds.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1ED8661E27D12D00E4D694 /* MTSShowIds.m */; };
+		9C1ED86C1E27D2EF00E4D694 /* MTSTrakt.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1ED86B1E27D2EF00E4D694 /* MTSTrakt.m */; };
+		9C81EEE61E2787E400137D76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C81EEE51E2787E400137D76 /* main.m */; };
+		9C81EEE91E2787E400137D76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C81EEE81E2787E400137D76 /* AppDelegate.m */; };
+		9C81EEF11E2787E400137D76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C81EEF01E2787E400137D76 /* Assets.xcassets */; };
+		9C81EEF41E2787E400137D76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C81EEF21E2787E400137D76 /* LaunchScreen.storyboard */; };
+		9C81EEFF1E2787E400137D76 /* MyTvShowsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C81EEFE1E2787E400137D76 /* MyTvShowsTests.m */; };
+		9C81EF0A1E2787E400137D76 /* MyTvShowsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C81EF091E2787E400137D76 /* MyTvShowsUITests.m */; };
+		9CE083E01E2852F800036CC4 /* MTSEpisodeWatched.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE083DE1E2852F800036CC4 /* MTSEpisodeWatched.m */; };
+		9CE083E21E28DD4100036CC4 /* MTSTraktTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE083E11E28DD4100036CC4 /* MTSTraktTests.m */; };
+		9CEB40671E27D8D900577497 /* MyTvShows.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CEB40661E27D8D900577497 /* MyTvShows.storyboard */; };
+		9CEB40701E28405400577497 /* MTSEpisodeIds.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB40691E28405400577497 /* MTSEpisodeIds.m */; };
+		9CEB40711E28405400577497 /* MTSEpisode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB406B1E28405400577497 /* MTSEpisode.m */; };
+		9CEB40721E28405400577497 /* MTSSeasonIds.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB406D1E28405400577497 /* MTSSeasonIds.m */; };
+		9CEB40731E28405400577497 /* MTSSeason.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB406F1E28405400577497 /* MTSSeason.m */; };
+		C1B24AB4C3BD58E3EE05381A /* libPods-MyTvShows.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7956E30B1BC08D635581A4FA /* libPods-MyTvShows.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9C81EEFB1E2787E400137D76 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C81EED91E2787E300137D76 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C81EEE01E2787E300137D76;
+			remoteInfo = MyTvShows;
+		};
+		9C81EF061E2787E400137D76 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C81EED91E2787E300137D76 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C81EEE01E2787E300137D76;
+			remoteInfo = MyTvShows;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		29742E2761EFC3C1B2AEC9D1 /* Pods-MyTvShowsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTvShowsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyTvShowsUITests/Pods-MyTvShowsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		774D54B00B3AF19E86FF5DEC /* libPods-MyTvShowsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyTvShowsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7956E30B1BC08D635581A4FA /* libPods-MyTvShows.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyTvShows.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		91C324C97BB76EA73E076115 /* Pods-MyTvShows.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTvShows.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyTvShows/Pods-MyTvShows.debug.xcconfig"; sourceTree = "<group>"; };
+		9C1ED84D1E27D0C400E4D694 /* database.sqlite */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = database.sqlite; sourceTree = "<group>"; };
+		9C1ED84E1E27D0C400E4D694 /* NAMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAMDatabase.h; sourceTree = "<group>"; };
+		9C1ED84F1E27D0C400E4D694 /* NAMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAMDatabase.m; sourceTree = "<group>"; };
+		9C1ED8501E27D0C400E4D694 /* NAMDatabaseClasses.nam */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NAMDatabaseClasses.nam; sourceTree = "<group>"; };
+		9C1ED8511E27D0C400E4D694 /* NAMEncrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAMEncrypt.h; sourceTree = "<group>"; };
+		9C1ED8521E27D0C400E4D694 /* NAMEncrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAMEncrypt.m; sourceTree = "<group>"; };
+		9C1ED8531E27D0C400E4D694 /* NAMObjectModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAMObjectModel.h; sourceTree = "<group>"; };
+		9C1ED8541E27D0C400E4D694 /* NAMObjectModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAMObjectModel.m; sourceTree = "<group>"; };
+		9C1ED8601E27D12000E4D694 /* MTSObjectModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSObjectModel.h; sourceTree = "<group>"; };
+		9C1ED8611E27D12000E4D694 /* MTSObjectModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSObjectModel.m; sourceTree = "<group>"; };
+		9C1ED8631E27D12D00E4D694 /* MTSShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSShow.h; sourceTree = "<group>"; };
+		9C1ED8641E27D12D00E4D694 /* MTSShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSShow.m; sourceTree = "<group>"; };
+		9C1ED8651E27D12D00E4D694 /* MTSShowIds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSShowIds.h; sourceTree = "<group>"; };
+		9C1ED8661E27D12D00E4D694 /* MTSShowIds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSShowIds.m; sourceTree = "<group>"; };
+		9C1ED86A1E27D2EF00E4D694 /* MTSTrakt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSTrakt.h; sourceTree = "<group>"; };
+		9C1ED86B1E27D2EF00E4D694 /* MTSTrakt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSTrakt.m; sourceTree = "<group>"; };
+		9C23D49B1E278D79008DF60E /* MyTvShows-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyTvShows-Bridging-Header.h"; sourceTree = "<group>"; };
+		9C81EEE11E2787E400137D76 /* MyTvShows.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTvShows.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C81EEE51E2787E400137D76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9C81EEE71E2787E400137D76 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9C81EEE81E2787E400137D76 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9C81EEF01E2787E400137D76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9C81EEF31E2787E400137D76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9C81EEF51E2787E400137D76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C81EEFA1E2787E400137D76 /* MyTvShowsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyTvShowsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C81EEFE1E2787E400137D76 /* MyTvShowsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTvShowsTests.m; sourceTree = "<group>"; };
+		9C81EF001E2787E400137D76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C81EF051E2787E400137D76 /* MyTvShowsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyTvShowsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C81EF091E2787E400137D76 /* MyTvShowsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTvShowsUITests.m; sourceTree = "<group>"; };
+		9C81EF0B1E2787E400137D76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CA58D381E278E2A00A790D6 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		9CA58D391E278E6F00A790D6 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		9CE083DE1E2852F800036CC4 /* MTSEpisodeWatched.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSEpisodeWatched.m; sourceTree = "<group>"; };
+		9CE083DF1E2852F800036CC4 /* MTSEpisodeWatched.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSEpisodeWatched.h; sourceTree = "<group>"; };
+		9CE083E11E28DD4100036CC4 /* MTSTraktTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSTraktTests.m; sourceTree = "<group>"; };
+		9CEB40661E27D8D900577497 /* MyTvShows.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyTvShows.storyboard; sourceTree = "<group>"; };
+		9CEB40681E28405400577497 /* MTSEpisodeIds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSEpisodeIds.h; sourceTree = "<group>"; };
+		9CEB40691E28405400577497 /* MTSEpisodeIds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSEpisodeIds.m; sourceTree = "<group>"; };
+		9CEB406A1E28405400577497 /* MTSEpisode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSEpisode.h; sourceTree = "<group>"; };
+		9CEB406B1E28405400577497 /* MTSEpisode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSEpisode.m; sourceTree = "<group>"; };
+		9CEB406C1E28405400577497 /* MTSSeasonIds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSSeasonIds.h; sourceTree = "<group>"; };
+		9CEB406D1E28405400577497 /* MTSSeasonIds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSSeasonIds.m; sourceTree = "<group>"; };
+		9CEB406E1E28405400577497 /* MTSSeason.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSSeason.h; sourceTree = "<group>"; };
+		9CEB406F1E28405400577497 /* MTSSeason.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSSeason.m; sourceTree = "<group>"; };
+		AEB4808D4D89FCF014E429F3 /* Pods-MyTvShows.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTvShows.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyTvShows/Pods-MyTvShows.release.xcconfig"; sourceTree = "<group>"; };
+		BCDCE5ECA030417D4D4DFA5C /* libPods-MyTvShowsUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyTvShowsUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAB6E4A060FA337F53D43145 /* Pods-MyTvShowsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTvShowsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyTvShowsTests/Pods-MyTvShowsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D072BDAA9D9D80E0388AEB9A /* Pods-MyTvShowsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTvShowsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyTvShowsTests/Pods-MyTvShowsTests.release.xcconfig"; sourceTree = "<group>"; };
+		E2457DFD43B7B4A1315396D5 /* Pods-MyTvShowsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTvShowsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyTvShowsUITests/Pods-MyTvShowsUITests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9C81EEDE1E2787E300137D76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1B24AB4C3BD58E3EE05381A /* libPods-MyTvShows.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C81EEF71E2787E400137D76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F3BF7F7A3C4A4DA7A86A60C /* libPods-MyTvShowsTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C81EF021E2787E400137D76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A19956BE3338436854495C4 /* libPods-MyTvShowsUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		56427C39D257B04DD2EED863 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				91C324C97BB76EA73E076115 /* Pods-MyTvShows.debug.xcconfig */,
+				AEB4808D4D89FCF014E429F3 /* Pods-MyTvShows.release.xcconfig */,
+				CAB6E4A060FA337F53D43145 /* Pods-MyTvShowsTests.debug.xcconfig */,
+				D072BDAA9D9D80E0388AEB9A /* Pods-MyTvShowsTests.release.xcconfig */,
+				29742E2761EFC3C1B2AEC9D1 /* Pods-MyTvShowsUITests.debug.xcconfig */,
+				E2457DFD43B7B4A1315396D5 /* Pods-MyTvShowsUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9C1ED84A1E27CFA700E4D694 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9C1ED84C1E27D0C400E4D694 /* OrmDatabaseClasses */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		9C1ED84B1E27D0B400E4D694 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9C81EEF01E2787E400137D76 /* Assets.xcassets */,
+				9C81EEF21E2787E400137D76 /* LaunchScreen.storyboard */,
+				9C81EEF51E2787E400137D76 /* Info.plist */,
+				9CA58D391E278E6F00A790D6 /* PrefixHeader.pch */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		9C1ED84C1E27D0C400E4D694 /* OrmDatabaseClasses */ = {
+			isa = PBXGroup;
+			children = (
+				9C1ED84D1E27D0C400E4D694 /* database.sqlite */,
+				9C1ED84E1E27D0C400E4D694 /* NAMDatabase.h */,
+				9C1ED84F1E27D0C400E4D694 /* NAMDatabase.m */,
+				9C1ED8501E27D0C400E4D694 /* NAMDatabaseClasses.nam */,
+				9C1ED8511E27D0C400E4D694 /* NAMEncrypt.h */,
+				9C1ED8521E27D0C400E4D694 /* NAMEncrypt.m */,
+				9C1ED8531E27D0C400E4D694 /* NAMObjectModel.h */,
+				9C1ED8541E27D0C400E4D694 /* NAMObjectModel.m */,
+			);
+			path = OrmDatabaseClasses;
+			sourceTree = "<group>";
+		};
+		9C1ED85A1E27D0C700E4D694 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9C1ED8691E27D2D200E4D694 /* MTSTrakt */,
+				9C1ED85D1E27D0F600E4D694 /* Base */,
+				9C1ED85B1E27D0D000E4D694 /* Models */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		9C1ED85B1E27D0D000E4D694 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9C1ED8631E27D12D00E4D694 /* MTSShow.h */,
+				9C1ED8641E27D12D00E4D694 /* MTSShow.m */,
+				9C1ED8651E27D12D00E4D694 /* MTSShowIds.h */,
+				9C1ED8661E27D12D00E4D694 /* MTSShowIds.m */,
+				9CEB406E1E28405400577497 /* MTSSeason.h */,
+				9CEB406F1E28405400577497 /* MTSSeason.m */,
+				9CEB406C1E28405400577497 /* MTSSeasonIds.h */,
+				9CEB406D1E28405400577497 /* MTSSeasonIds.m */,
+				9CEB406A1E28405400577497 /* MTSEpisode.h */,
+				9CEB406B1E28405400577497 /* MTSEpisode.m */,
+				9CEB40681E28405400577497 /* MTSEpisodeIds.h */,
+				9CEB40691E28405400577497 /* MTSEpisodeIds.m */,
+				9CE083DF1E2852F800036CC4 /* MTSEpisodeWatched.h */,
+				9CE083DE1E2852F800036CC4 /* MTSEpisodeWatched.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9C1ED85C1E27D0DD00E4D694 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9CEB40661E27D8D900577497 /* MyTvShows.storyboard */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9C1ED85D1E27D0F600E4D694 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				9C1ED8601E27D12000E4D694 /* MTSObjectModel.h */,
+				9C1ED8611E27D12000E4D694 /* MTSObjectModel.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		9C1ED8691E27D2D200E4D694 /* MTSTrakt */ = {
+			isa = PBXGroup;
+			children = (
+				9C1ED86A1E27D2EF00E4D694 /* MTSTrakt.h */,
+				9C1ED86B1E27D2EF00E4D694 /* MTSTrakt.m */,
+			);
+			path = MTSTrakt;
+			sourceTree = "<group>";
+		};
+		9C81EED81E2787E300137D76 = {
+			isa = PBXGroup;
+			children = (
+				9C81EEE31E2787E400137D76 /* MyTvShows */,
+				9C81EEFD1E2787E400137D76 /* MyTvShowsTests */,
+				9C81EF081E2787E400137D76 /* MyTvShowsUITests */,
+				9C81EEE21E2787E400137D76 /* Products */,
+				56427C39D257B04DD2EED863 /* Pods */,
+				BAAB12D020B5E01F099621D5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9C81EEE21E2787E400137D76 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9C81EEE11E2787E400137D76 /* MyTvShows.app */,
+				9C81EEFA1E2787E400137D76 /* MyTvShowsTests.xctest */,
+				9C81EF051E2787E400137D76 /* MyTvShowsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9C81EEE31E2787E400137D76 /* MyTvShows */ = {
+			isa = PBXGroup;
+			children = (
+				9CA58D381E278E2A00A790D6 /* Constants.h */,
+				9C81EEE71E2787E400137D76 /* AppDelegate.h */,
+				9C81EEE81E2787E400137D76 /* AppDelegate.m */,
+				9C1ED85A1E27D0C700E4D694 /* Classes */,
+				9C1ED84A1E27CFA700E4D694 /* Frameworks */,
+				9C1ED85C1E27D0DD00E4D694 /* ViewControllers */,
+				9C1ED84B1E27D0B400E4D694 /* Resources */,
+				9C81EEE41E2787E400137D76 /* Supporting Files */,
+				9C23D49B1E278D79008DF60E /* MyTvShows-Bridging-Header.h */,
+			);
+			path = MyTvShows;
+			sourceTree = "<group>";
+		};
+		9C81EEE41E2787E400137D76 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9C81EEE51E2787E400137D76 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9C81EEFD1E2787E400137D76 /* MyTvShowsTests */ = {
+			isa = PBXGroup;
+			children = (
+				9CE083E11E28DD4100036CC4 /* MTSTraktTests.m */,
+				9C81EEFE1E2787E400137D76 /* MyTvShowsTests.m */,
+				9C81EF001E2787E400137D76 /* Info.plist */,
+			);
+			path = MyTvShowsTests;
+			sourceTree = "<group>";
+		};
+		9C81EF081E2787E400137D76 /* MyTvShowsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9C81EF091E2787E400137D76 /* MyTvShowsUITests.m */,
+				9C81EF0B1E2787E400137D76 /* Info.plist */,
+			);
+			path = MyTvShowsUITests;
+			sourceTree = "<group>";
+		};
+		BAAB12D020B5E01F099621D5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7956E30B1BC08D635581A4FA /* libPods-MyTvShows.a */,
+				774D54B00B3AF19E86FF5DEC /* libPods-MyTvShowsTests.a */,
+				BCDCE5ECA030417D4D4DFA5C /* libPods-MyTvShowsUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9C81EEE01E2787E300137D76 /* MyTvShows */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C81EF0E1E2787E400137D76 /* Build configuration list for PBXNativeTarget "MyTvShows" */;
+			buildPhases = (
+				3F70FA46AB49EF6B9D1EE722 /* [CP] Check Pods Manifest.lock */,
+				9C81EEDD1E2787E300137D76 /* Sources */,
+				9C81EEDE1E2787E300137D76 /* Frameworks */,
+				9C81EEDF1E2787E300137D76 /* Resources */,
+				C2FAC597AB9DB5E874ADCA23 /* [CP] Embed Pods Frameworks */,
+				1E2B6B7E28512C39D426D6C5 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyTvShows;
+			productName = MyTvShows;
+			productReference = 9C81EEE11E2787E400137D76 /* MyTvShows.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9C81EEF91E2787E400137D76 /* MyTvShowsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C81EF111E2787E400137D76 /* Build configuration list for PBXNativeTarget "MyTvShowsTests" */;
+			buildPhases = (
+				C6DAFF92D2E34CB2A53541BA /* [CP] Check Pods Manifest.lock */,
+				9C81EEF61E2787E400137D76 /* Sources */,
+				9C81EEF71E2787E400137D76 /* Frameworks */,
+				9C81EEF81E2787E400137D76 /* Resources */,
+				41368F524D7903CB4F0C0767 /* [CP] Embed Pods Frameworks */,
+				AC884D58BECC84781E0EFCB5 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9C81EEFC1E2787E400137D76 /* PBXTargetDependency */,
+			);
+			name = MyTvShowsTests;
+			productName = MyTvShowsTests;
+			productReference = 9C81EEFA1E2787E400137D76 /* MyTvShowsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9C81EF041E2787E400137D76 /* MyTvShowsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C81EF141E2787E400137D76 /* Build configuration list for PBXNativeTarget "MyTvShowsUITests" */;
+			buildPhases = (
+				E82D6DC47B1AF82D92A968AC /* [CP] Check Pods Manifest.lock */,
+				9C81EF011E2787E400137D76 /* Sources */,
+				9C81EF021E2787E400137D76 /* Frameworks */,
+				9C81EF031E2787E400137D76 /* Resources */,
+				8B5D7159060535434B5EA2CF /* [CP] Embed Pods Frameworks */,
+				32C4FC7A309A0546F740E1EA /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9C81EF071E2787E400137D76 /* PBXTargetDependency */,
+			);
+			name = MyTvShowsUITests;
+			productName = MyTvShowsUITests;
+			productReference = 9C81EF051E2787E400137D76 /* MyTvShowsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9C81EED91E2787E300137D76 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Narlei A Moreira";
+				TargetAttributes = {
+					9C81EEE01E2787E300137D76 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = HQKT5G7NHC;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+					};
+					9C81EEF91E2787E400137D76 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = HQKT5G7NHC;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9C81EEE01E2787E300137D76;
+					};
+					9C81EF041E2787E400137D76 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = HQKT5G7NHC;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9C81EEE01E2787E300137D76;
+					};
+				};
+			};
+			buildConfigurationList = 9C81EEDC1E2787E300137D76 /* Build configuration list for PBXProject "MyTvShows" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9C81EED81E2787E300137D76;
+			productRefGroup = 9C81EEE21E2787E400137D76 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9C81EEE01E2787E300137D76 /* MyTvShows */,
+				9C81EEF91E2787E400137D76 /* MyTvShowsTests */,
+				9C81EF041E2787E400137D76 /* MyTvShowsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9C81EEDF1E2787E300137D76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C1ED8551E27D0C400E4D694 /* database.sqlite in Resources */,
+				9C81EEF41E2787E400137D76 /* LaunchScreen.storyboard in Resources */,
+				9C81EEF11E2787E400137D76 /* Assets.xcassets in Resources */,
+				9C1ED8571E27D0C400E4D694 /* NAMDatabaseClasses.nam in Resources */,
+				9CEB40671E27D8D900577497 /* MyTvShows.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C81EEF81E2787E400137D76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C81EF031E2787E400137D76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1E2B6B7E28512C39D426D6C5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyTvShows/Pods-MyTvShows-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		32C4FC7A309A0546F740E1EA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyTvShowsUITests/Pods-MyTvShowsUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3F70FA46AB49EF6B9D1EE722 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		41368F524D7903CB4F0C0767 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyTvShowsTests/Pods-MyTvShowsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B5D7159060535434B5EA2CF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyTvShowsUITests/Pods-MyTvShowsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC884D58BECC84781E0EFCB5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyTvShowsTests/Pods-MyTvShowsTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2FAC597AB9DB5E874ADCA23 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyTvShows/Pods-MyTvShows-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6DAFF92D2E34CB2A53541BA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E82D6DC47B1AF82D92A968AC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9C81EEDD1E2787E300137D76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C1ED8581E27D0C400E4D694 /* NAMEncrypt.m in Sources */,
+				9C1ED8561E27D0C400E4D694 /* NAMDatabase.m in Sources */,
+				9C1ED8591E27D0C400E4D694 /* NAMObjectModel.m in Sources */,
+				9CEB40701E28405400577497 /* MTSEpisodeIds.m in Sources */,
+				9C1ED86C1E27D2EF00E4D694 /* MTSTrakt.m in Sources */,
+				9C1ED8621E27D12000E4D694 /* MTSObjectModel.m in Sources */,
+				9C1ED8681E27D12D00E4D694 /* MTSShowIds.m in Sources */,
+				9C1ED8671E27D12D00E4D694 /* MTSShow.m in Sources */,
+				9CEB40731E28405400577497 /* MTSSeason.m in Sources */,
+				9C81EEE91E2787E400137D76 /* AppDelegate.m in Sources */,
+				9CEB40711E28405400577497 /* MTSEpisode.m in Sources */,
+				9CEB40721E28405400577497 /* MTSSeasonIds.m in Sources */,
+				9C81EEE61E2787E400137D76 /* main.m in Sources */,
+				9CE083E01E2852F800036CC4 /* MTSEpisodeWatched.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C81EEF61E2787E400137D76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C81EEFF1E2787E400137D76 /* MyTvShowsTests.m in Sources */,
+				9CE083E21E28DD4100036CC4 /* MTSTraktTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C81EF011E2787E400137D76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C81EF0A1E2787E400137D76 /* MyTvShowsUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9C81EEFC1E2787E400137D76 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C81EEE01E2787E300137D76 /* MyTvShows */;
+			targetProxy = 9C81EEFB1E2787E400137D76 /* PBXContainerItemProxy */;
+		};
+		9C81EF071E2787E400137D76 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C81EEE01E2787E300137D76 /* MyTvShows */;
+			targetProxy = 9C81EF061E2787E400137D76 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9C81EEF21E2787E400137D76 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C81EEF31E2787E400137D76 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9C81EF0C1E2787E400137D76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9C81EF0D1E2787E400137D76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9C81EF0F1E2787E400137D76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91C324C97BB76EA73E076115 /* Pods-MyTvShows.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = HQKT5G7NHC;
+				GCC_PREFIX_HEADER = MyTvShows/PrefixHeader.pch;
+				INFOPLIST_FILE = MyTvShows/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nam.MyTvShows;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyTvShows/MyTvShows-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		9C81EF101E2787E400137D76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEB4808D4D89FCF014E429F3 /* Pods-MyTvShows.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = HQKT5G7NHC;
+				GCC_PREFIX_HEADER = MyTvShows/PrefixHeader.pch;
+				INFOPLIST_FILE = MyTvShows/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nam.MyTvShows;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyTvShows/MyTvShows-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		9C81EF121E2787E400137D76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CAB6E4A060FA337F53D43145 /* Pods-MyTvShowsTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = HQKT5G7NHC;
+				INFOPLIST_FILE = MyTvShowsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nam.MyTvShowsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyTvShows.app/MyTvShows";
+			};
+			name = Debug;
+		};
+		9C81EF131E2787E400137D76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D072BDAA9D9D80E0388AEB9A /* Pods-MyTvShowsTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = HQKT5G7NHC;
+				INFOPLIST_FILE = MyTvShowsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nam.MyTvShowsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyTvShows.app/MyTvShows";
+			};
+			name = Release;
+		};
+		9C81EF151E2787E400137D76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29742E2761EFC3C1B2AEC9D1 /* Pods-MyTvShowsUITests.debug.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = HQKT5G7NHC;
+				INFOPLIST_FILE = MyTvShowsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nam.MyTvShowsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MyTvShows;
+			};
+			name = Debug;
+		};
+		9C81EF161E2787E400137D76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2457DFD43B7B4A1315396D5 /* Pods-MyTvShowsUITests.release.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = HQKT5G7NHC;
+				INFOPLIST_FILE = MyTvShowsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nam.MyTvShowsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MyTvShows;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9C81EEDC1E2787E300137D76 /* Build configuration list for PBXProject "MyTvShows" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C81EF0C1E2787E400137D76 /* Debug */,
+				9C81EF0D1E2787E400137D76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C81EF0E1E2787E400137D76 /* Build configuration list for PBXNativeTarget "MyTvShows" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C81EF0F1E2787E400137D76 /* Debug */,
+				9C81EF101E2787E400137D76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C81EF111E2787E400137D76 /* Build configuration list for PBXNativeTarget "MyTvShowsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C81EF121E2787E400137D76 /* Debug */,
+				9C81EF131E2787E400137D76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C81EF141E2787E400137D76 /* Build configuration list for PBXNativeTarget "MyTvShowsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C81EF151E2787E400137D76 /* Debug */,
+				9C81EF161E2787E400137D76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9C81EED91E2787E300137D76 /* Project object */;
+}

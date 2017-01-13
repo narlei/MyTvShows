@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>EGOCache.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false />
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>EGOImageLoading.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false />
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>EGOPhotoViewer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false />
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>FMDB.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false />
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>Pods-MyTvShows.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false />
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>Pods-MyTvShowsTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false />
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
+		<key>Pods-MyTvShowsUITests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false />
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
+		<key>Reachability.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false />
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
+		<key>TPKeyboardAvoiding.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false />
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
+		<key>Unirest.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false />
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>0D4948D61023C30218FD98FEE39BDBEF</key>
+		<dict>
+			<key>primary</key>
+			<true />
+		</dict>
+		<key>21BE164D2EE5803F381DBABF37509936</key>
+		<dict>
+			<key>primary</key>
+			<true />
+		</dict>
+		<key>2D748A1E7B7DFC967C340F9954065967</key>
+		<dict>
+			<key>primary</key>
+			<true />
+		</dict>
+		<key>3A3D3692B2D4092E71397DD666E49C8F</key>
+		<dict>
+			<key>primary</key>
+			<true />
+		</dict>
+		<key>4D6AA28B210901149A130AB239824677</key>
+		<dict>
+			<key>primary</key>
+			<true />
+		</dict>
+		<key>8642CC820CE8C5B88C113D7F47AF4BC3</key>
+		<dict>
+			<key>primary</key>
+			<true />
+		</dict>
+		<key>92BFFFC6FF3E73D7BD4D811A0855180C</key>
+		<dict>
+			<key>primary</key>
+			<true />
+		</dict>
+		<key>9D8BD6E2A06880B370B061ECFD69C91A</key>
+		<dict>
+			<key>primary</key>
+			<true />
+		</dict>
+		<key>B7BBBA374B5F67D67B0C64C398016205</key>
+		<dict>
+			<key>primary</key>
+			<true />
+		</dict>
+		<key>BD3B3AD0E5C722635FEF5221F0231B23</key>
+		<dict>
+			<key>primary</key>
+			<true />
+		</dict>
+	</dict>
+</dict>
+</plist>
