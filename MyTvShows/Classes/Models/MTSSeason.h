@@ -16,6 +16,8 @@
 @property (strong, nonatomic) NSArray *arrayEpisodes;
 @property (strong, nonatomic) NSNumber *traktId;
 
+@property (strong, nonatomic) NSNumber *showId;
+
 
 
 - (id) initWithJSONDictionary:(NSDictionary *)dic;

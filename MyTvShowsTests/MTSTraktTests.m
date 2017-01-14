@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "MTSTrakt.h"
+
 @interface MTSTraktTests : XCTestCase
 
 @end
@@ -36,39 +37,83 @@
     }];
 }
 
-- (void)testDownloadSeasonsFromShow{
-    MTSShow*show = [[MTSShow getAllDataWhere:@"1=1"] firstObject];
-    XCTAssertNotNil(show.traktId,@"Show can't be nil");
-    
+- (void)testDownloadSeasonsFromShow {
+    MTSShow *show = [[MTSShow getAllDataWhere:@"1=1"] firstObject];
+    XCTAssertNotNil(show.traktId, @"Show can't be nil");
+
     //Expectation
     XCTestExpectation *expectation = [self expectationWithDescription:@"Testing Async Method Works!"];
-    
+
     [[MTSTrakt sharedMTSTrakt] downloadSeasonsFromShow:show OnComplete:^(NSDictionary *dicReturn) {
         if (![[dicReturn objectForKey:@"success"] boolValue]) {
             XCTFail(@"Expectation Failed with error: %@", [dicReturn objectForKey:@"message"]);
         }
         [expectation fulfill];
     }];
+
+    [self waitForExpectationsWithTimeout:10.0 handler:^(NSError *error) {
+
+        if (error) {
+            XCTFail(@"Expectation Failed with error: %@", error);
+        }
+
+    }];
+}
+
+- (void)testAddToHistoryWatched {
+    MTSEpisode *episode = [[MTSEpisode getAllDataWhere:@"1=1"] firstObject];
+
+    XCTAssertNotNil(episode, @"Show can't be nil");
+    NSLog(@"Episode: %@ | ShowId: %@",episode.title,episode.showId);
+
+    //Expectation
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Testing Async Method Works!"];
+
+    [[MTSTrakt sharedMTSTrakt] addToHistoryWatched:episode OnComplete:^(NSDictionary *dicReturn) {
+        if (![[dicReturn objectForKey:@"success"] boolValue]) {
+            XCTFail(@"Expectation Failed with error: %@", [dicReturn objectForKey:@"message"]);
+        }else{
+            NSLog(@"%@",[dicReturn objectForKey:@"message"]);
+        }
+        [expectation fulfill];
+    }];
+    
+    [self waitForExpectationsWithTimeout:10.0 handler:^(NSError *error) {
+
+        if (error) {
+            XCTFail(@"Expectation Failed with error: %@", error);
+        }
+
+    }];
+}
+
+- (void)testRemoveFromHistoryWatched {
+    MTSEpisodeWatched *episodeWatched = [[MTSEpisodeWatched getAllDataWhere:@"1=1"] firstObject];
+    MTSEpisode *episode = [[MTSEpisode getAllDataWhere:[NSString stringWithFormat:@"number = %@ and seasonId = %@ and showId = %@",episodeWatched.number,episodeWatched.seasonId,episodeWatched.showId]] firstObject];
+    
+    XCTAssertNotNil(episode, @"Episode can't be nil");
+    NSLog(@"Episode: %@ | ShowId: %@",episode.title,episode.showId);
+    
+    //Expectation
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Testing Async Method Works!"];
+    
+    [[MTSTrakt sharedMTSTrakt] removeFromHistoryWatched:episode OnComplete:^(NSDictionary *dicReturn) {
+        if (![[dicReturn objectForKey:@"success"] boolValue]) {
+            XCTFail(@"Expectation Failed with error: %@", [dicReturn objectForKey:@"message"]);
+        }else{
+            NSLog(@"%@",[dicReturn objectForKey:@"message"]);
+        }
+        [expectation fulfill];
+    }];
     
     [self waitForExpectationsWithTimeout:10.0 handler:^(NSError *error) {
         
-        if(error)
-        {
+        if (error) {
             XCTFail(@"Expectation Failed with error: %@", error);
         }
         
     }];
 }
-
-- (void)testAddToHistoryWatched{
-    MTSEpisode *episode = [[MTSEpisode getAllDataWhere:@"1=1"] firstObject];
-    
-    [[MTSTrakt sharedMTSTrakt] addToHistoryWatched:episode OnComplete:^(NSDictionary *dicReturn) {
-        
-    }];
-}
-
-
 
 
 @end

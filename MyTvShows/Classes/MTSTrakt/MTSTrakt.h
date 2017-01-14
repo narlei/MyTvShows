@@ -34,7 +34,15 @@
 
 - (void)downloadWatchedListOnComplete:(void (^) (NSDictionary* dicReturn))onComplete;
 
+- (void)downloadAllShowsOnComplete:(void (^) (NSDictionary* dicReturn))onComplete;
 - (void)downloadSeasonsFromShow:(MTSShow *)pShow OnComplete:(void (^) (NSDictionary* dicReturn))onComplete;
 
+
 - (void)addToHistoryWatched:(MTSEpisode *)pEpisode OnComplete:(void (^) (NSDictionary* dicReturn))onComplete;
+- (void)removeFromHistoryWatched:(MTSEpisode *)pEpisode OnComplete:(void (^) (NSDictionary* dicReturn))onComplete;
+
+#pragma mark - Get Data
+- (void)getTrendingListOnComplete:(void (^) (NSArray* arrayShows))onComplete;
+- (void)getShowsWithQuery:(NSString *)pQuery OnComplete:(void (^) (NSArray* arrayShows))onComplete;
+
 @end

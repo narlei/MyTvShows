@@ -40,6 +40,12 @@
 - (void)saveData;
 
 /**
+ *  Remove object data from database
+ */
+- (void)deleteData;
+
+
+/**
  *  Generate a unique key
  *
  *  @return alphanumeric uniquekey

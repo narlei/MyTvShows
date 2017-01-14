@@ -21,7 +21,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _sharedMTSTrakt = [MTSTrakt new];
-        [_sharedMTSTrakt restoreDefaults];
+        [_sharedMTSTrakt _restoreDefaults];
     });
     return _sharedMTSTrakt;
 }
@@ -51,7 +51,7 @@
                                   @"redirect_uri":DEF_callbackUrls,
                                   @"grant_type":@"authorization_code"};
     
-    NSString *strJSON = [self convertDictionaryToJsonString:pParameters];
+    NSString *strJSON = [self _convertDictionaryToJsonString:pParameters];
     NSLog(@" -----\n    %@    \n-----", strJSON);
     
     NSData *jsonData = [strJSON dataUsingEncoding:NSUTF8StringEncoding];
@@ -61,14 +61,19 @@
         [bodyRequest setHeaders:headers];
         [bodyRequest setBody:jsonData];
     }]asJsonAsync:^(UNIHTTPJsonResponse *jsonResponse, NSError *error) {
+        if (error) {
+            onComplete(@{@"success":@0, @"message":@"Erro ao requisitar o token de acesso"});
+            NSLog(@"Token Error");
+            return;
+        }
         
         self.refreshToken = [jsonResponse.body.object objectForKey:@"refresh_token"];
         self.createAt = [jsonResponse.body.object objectForKey:@"created_at"];
         self.accessToken  = [jsonResponse.body.object objectForKey:@"access_token"];
         self.expiresIn = [jsonResponse.body.object objectForKey:@"expires_in"];
         
-        [self saveDefaults];
-        
+        [self _saveDefaults];
+        NSLog(@"Token Success");
         onComplete(@{@"success":@1, @"message":@"Sucesso"});
         
     }];
@@ -79,10 +84,10 @@
 
 - (void)setAuthCode:(NSString *)authCode{
     _authCode = authCode;
-    [self saveDefaults];
+    [self _saveDefaults];
 }
 
-- (NSString *)convertDictionaryToJsonString:(NSDictionary *)dict {
+- (NSString *)_convertDictionaryToJsonString:(NSDictionary *)dict {
     if (dict) {
         NSError *error;
         NSDictionary *tempDict = [dict copy]; // get Dictionary from mutable Dictionary
@@ -98,7 +103,7 @@
 
 #pragma mark - Persietence
 
-- (void)saveDefaults{
+- (void)_saveDefaults{
     [[NSUserDefaults standardUserDefaults] setObject:self.refreshToken forKey:@"refreshToken"];
     [[NSUserDefaults standardUserDefaults] setObject:self.createAt forKey:@"createAt"];
     [[NSUserDefaults standardUserDefaults] setObject:self.accessToken forKey:@"accessToken"];
@@ -106,7 +111,7 @@
     [[NSUserDefaults standardUserDefaults] setObject:self.expiresIn forKey:@"expiresIn"];
 }
 
-- (void)restoreDefaults{
+- (void)_restoreDefaults{
     self.refreshToken = [[NSUserDefaults standardUserDefaults] stringForKey:@"refreshToken"];
     self.createAt     = [NSNumber numberWithInteger:[[NSUserDefaults standardUserDefaults] integerForKey:@"createAt"]];
     self.accessToken = [[NSUserDefaults standardUserDefaults] stringForKey:@"accessToken"];
@@ -127,6 +132,13 @@
                                     @"trakt-api-key":DEF_trakt_client_id,
                                     @"Authorization":[NSString stringWithFormat:@"Bearer %@",[MTSTrakt sharedMTSTrakt].accessToken]}];
     }] asJsonAsync:^(UNIHTTPJsonResponse *jsonResponse, NSError *error) {
+        
+        if (error) {
+            onComplete(@{@"success":@0, @"message":[NSString stringWithFormat:@"Erro ao requisitar a lista de séries assistidas [%@]",error.localizedDescription]});
+            NSLog(@"Watched list error");
+            return;
+        }
+        
         for (NSDictionary *dicData in jsonResponse.body.array) {
             MTSShow *show = [[MTSShow alloc] initWithJSONDictionary:[dicData objectForKey:@"show"]];
             [show saveData];
@@ -144,12 +156,33 @@
             }
             
         }
-        
+        NSLog(@"Watched list Success");
         onComplete(@{@"success":@1, @"message":@"Sucesso"});
     }];
     
 }
 
+
+- (void)downloadAllShowsOnComplete:(void (^) (NSDictionary* dicReturn))onComplete{
+ 
+    NSArray*arrayShows = [MTSShow getAllDataWhere:@"1=1"];
+    [self _downloadShows:arrayShows index:0 OnComplete:onComplete];
+    
+}
+
+- (void)_downloadShows:(NSArray *)pArray index:(int)pIndex OnComplete:(void (^) (NSDictionary* dicReturn))onComplete{
+    
+    if (pArray.count == pIndex) {
+        onComplete(@{@"success":@1, @"message":@"Sucesso"});
+        NSLog(@"All shows Downloaded");
+        return;
+    }
+    
+    [self downloadSeasonsFromShow:[pArray objectAtIndex:pIndex] OnComplete:^(NSDictionary *dicReturn) {
+        [self _downloadShows:pArray index:pIndex+1 OnComplete:onComplete];
+    }];
+    
+}
 
 - (void)downloadSeasonsFromShow:(MTSShow *)pShow OnComplete:(void (^) (NSDictionary* dicReturn))onComplete{
     
@@ -163,19 +196,15 @@
     }] asJsonAsync:^(UNIHTTPJsonResponse *jsonResponse, NSError *error) {
         
         if (error) {
-            onComplete(@{@"success":@0, @"message":error.localizedDescription});
+            onComplete(@{@"success":@0, @"message":[NSString stringWithFormat:@"Erro ao requisitar os temporadas da série [%@]",error.localizedDescription]});
             return;
         }
         
         for (NSDictionary *dicData in jsonResponse.body.array) {
             
             MTSSeason*season = [[MTSSeason alloc] initWithJSONDictionary:dicData];
+            season.showId = pShow.traktId;
             [season saveData];
-//            for (NSDictionary *dicEpisodes in [dicData objectForKey:@"episodes"]) {
-//                MTSEpisode *episode = [[MTSEpisode alloc] initWithJSONDictionary:dicEpisodes];
-//                episode.showId = pShow.traktId;
-//                [episode saveData];
-//            }
         }
         
         onComplete(@{@"success":@1, @"message":@"Sucesso"});
@@ -186,20 +215,19 @@
 - (void)addToHistoryWatched:(MTSEpisode *)pEpisode OnComplete:(void (^) (NSDictionary* dicReturn))onComplete{
     
     NSString*lastWatched = [NSString stringWithFormat:@"%@",[NSDate date]];
-//    2014-09-01T09:10:11.000Z
     MTSEpisodeWatched *watched = [[MTSEpisodeWatched alloc] initWithNumber:pEpisode.number lastWatched:lastWatched showId:pEpisode.showId seasonId:pEpisode.seasonId];
     
     NSDictionary *pParameters = @{@"watched_at":watched.last_watched_at,
                                   @"ids":@{
-                                          @"trakt":pEpisode.episodeIds.trakt,
-                                          @"tvdb":pEpisode.episodeIds.tvdb,
-                                          @"imdb":pEpisode.episodeIds.imdb,
-                                          @"tmdb":pEpisode.episodeIds.tmdb,
-                                          @"tvrage":pEpisode.episodeIds.tvrage
+                                          @"trakt":(pEpisode.episodeIds.trakt == nil ? @0 : pEpisode.episodeIds.trakt),
+                                          @"tvdb":(pEpisode.episodeIds.tvdb == nil ? @0 : pEpisode.episodeIds.tvdb),
+                                          @"imdb":(pEpisode.episodeIds.imdb == nil ? @0 : pEpisode.episodeIds.imdb),
+                                          @"tmdb":(pEpisode.episodeIds.tmdb == nil ? @0 : pEpisode.episodeIds.tmdb),
+                                          @"tvrage":(pEpisode.episodeIds.tvrage == nil ? @0 : pEpisode.episodeIds.tvrage)
                                           }
                                       };
     
-    NSString *strJSON = [self convertDictionaryToJsonString:@{@"episodes":@[pParameters]}];
+    NSString *strJSON = [self _convertDictionaryToJsonString:@{@"episodes":@[pParameters]}];
     NSLog(@" -----\n    %@    \n-----", strJSON);
     
     NSData *jsonData = [strJSON dataUsingEncoding:NSUTF8StringEncoding];
@@ -218,34 +246,38 @@
     }] asJsonAsync:^(UNIHTTPJsonResponse *jsonResponse, NSError *error) {
         if ([[[jsonResponse.body.object objectForKey:@"added"] objectForKey:@"episodes"] intValue] > 0) {
             [watched saveData];
+            onComplete(@{@"success":@1, @"message":@"Sucesso"});
+        }else{
+            onComplete(@{@"success":@0, @"message":@"Não pode enviar as informações"});
         }
         
-        onComplete(@{@"success":@1, @"message":@"Sucesso"});
     }];
     
 }
+
+
 
 - (void)removeFromHistoryWatched:(MTSEpisode *)pEpisode OnComplete:(void (^) (NSDictionary* dicReturn))onComplete{
     
     
     NSDictionary *pParameters = @{@"watched_at":pEpisode.watched.last_watched_at,
                                   @"ids":@{
-                                          @"trakt":pEpisode.episodeIds.trakt,
-                                          @"tvdb":pEpisode.episodeIds.tvdb,
-                                          @"imdb":pEpisode.episodeIds.imdb,
-                                          @"tmdb":pEpisode.episodeIds.tmdb,
-                                          @"tvrage":pEpisode.episodeIds.tvrage
+                                          @"trakt":(pEpisode.episodeIds.trakt == nil ? @0 : pEpisode.episodeIds.trakt),
+                                          @"tvdb":(pEpisode.episodeIds.tvdb == nil ? @0 : pEpisode.episodeIds.tvdb),
+                                          @"imdb":(pEpisode.episodeIds.imdb == nil ? @0 : pEpisode.episodeIds.imdb),
+                                          @"tmdb":(pEpisode.episodeIds.tmdb == nil ? @0 : pEpisode.episodeIds.tmdb),
+                                          @"tvrage":(pEpisode.episodeIds.tvrage == nil ? @0 : pEpisode.episodeIds.tvrage)
                                           }
                                   };
     
-    NSString *strJSON = [self convertDictionaryToJsonString:@{@"episodes":@[pParameters]}];
+    NSString *strJSON = [self _convertDictionaryToJsonString:@{@"episodes":@[pParameters]}];
     NSLog(@" -----\n    %@    \n-----", strJSON);
     
     NSData *jsonData = [strJSON dataUsingEncoding:NSUTF8StringEncoding];
     
     
     [[UNIRest postEntity:^(UNIBodyRequest *bodyRequest) {
-        [bodyRequest setUrl:[NSString stringWithFormat:@"%@sync/history",DEF_trakt_base_api_url]];
+        [bodyRequest setUrl:[NSString stringWithFormat:@"%@sync/history/remove",DEF_trakt_base_api_url]];
         
         [bodyRequest setHeaders:@{@"Content-Type": @"application/json",
                                   @"trakt-api-version":@"2",
@@ -255,12 +287,12 @@
         [bodyRequest setBody:jsonData];
         
     }] asJsonAsync:^(UNIHTTPJsonResponse *jsonResponse, NSError *error) {
-        if ([[[jsonResponse.body.object objectForKey:@"added"] objectForKey:@"episodes"] intValue] > 0) {
-//            [watched saveData];
-            // TODO
+        if ([[[jsonResponse.body.object objectForKey:@"deleted"] objectForKey:@"episodes"] intValue] > 0) {
+            [pEpisode.watched deleteData];
+            onComplete(@{@"success":@1, @"message":@"Sucesso"});
+        }else{
+            onComplete(@{@"success":@0, @"message":@"Não pode enviar as informações"});
         }
-        
-        onComplete(@{@"success":@1, @"message":@"Sucesso"});
     }];
     
 }

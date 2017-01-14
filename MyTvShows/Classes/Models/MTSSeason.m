@@ -51,6 +51,7 @@
     [super saveData];
     [self.seasonIds saveData];
     for (MTSEpisode *episode in self.arrayEpisodes) {
+        episode.showId = self.showId;
         [episode saveData];
     }
 }

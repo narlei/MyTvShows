@@ -9,8 +9,9 @@
 #import "MTSEpisodeIds.h"
 
 
-@implementation MTSEpisode{
+@implementation MTSEpisode {
     MTSEpisodeWatched *__watched;
+    MTSEpisodeIds *__episodeIds;
 }
 
 #pragma mark - API
@@ -54,28 +55,40 @@
     [self.episodeIds saveData];
 }
 
-+(NSArray *)primaryKeys{
++ (NSArray *)primaryKeys {
     return @[@"traktId"];
 }
 
-+ (NSArray *)ignoredProperties{
++ (NSArray *)ignoredProperties {
     NSMutableArray *array = [[NSMutableArray alloc] initWithArray:[super ignoredProperties]];
     [array addObject:@"episodeIds"];
+    [array addObject:@"watched"];
     return array;
 }
 
 #pragma mark - Gettes and Setters
 
-- (void)setWatched:(MTSEpisodeWatched *)watched{
+- (void)setWatched:(MTSEpisodeWatched *)watched {
     __watched = watched;
 }
 
-- (MTSEpisodeWatched *)watched{
+- (MTSEpisodeWatched *)watched {
     if (!__watched) {
-        __watched = [[MTSEpisodeWatched getAllDataWhere:[NSString stringWithFormat:@"showId = %@ AND seasonId = %@ and number = %@",self.showId,self.seasonId,self.number]] firstObject];
+        __watched = [[MTSEpisodeWatched getAllDataWhere:[NSString stringWithFormat:@"showId = %@ AND seasonId = %@ and number = %@", self.showId, self.seasonId, self.number]] firstObject];
     }
     return __watched;
 }
 
+
+- (void)setEpisodeIds:(MTSEpisodeIds *)episodeIds {
+    __episodeIds = episodeIds;
+}
+
+- (MTSEpisodeIds *)episodeIds {
+    if (!__episodeIds) {
+        __episodeIds = [[MTSEpisodeIds getAllDataWhere:[NSString stringWithFormat:@"trakt = %@",self.traktId]] firstObject];
+    }
+    return  __episodeIds;
+}
 
 @end

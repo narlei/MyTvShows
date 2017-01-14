@@ -147,6 +147,17 @@
 }
 
 // Deleta
+
+- (void)deleteData {
+    NSDictionary *dicData = [self dictionaryData];
+    [self deleteDataWithValues:dicData
+                       inTable:[self.class tableName]
+                    onComplete:^(FMDatabase *database){
+                        
+                    }];
+}
+
+
 + (void)deleteDataFromTable:(NSString *)pTable where:(NSString *)pWhere {
     FMDatabaseQueue *queue = [FMDatabaseQueue databaseQueueWithPath:[[NAMDatabase sharedNAMDatabase] databasePath]];
     [queue inDatabase:^(FMDatabase *db) {
