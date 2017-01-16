@@ -126,6 +126,7 @@
         Class cl = NSClassFromString(className);
         NSString *sqlCreate = [cl sqlGenerateTable];
         [[NAMDatabase sharedNAMDatabase] executeStatements:sqlCreate];
+        NSLog(@"Criando: %@",sqlCreate);
     }
 }
 

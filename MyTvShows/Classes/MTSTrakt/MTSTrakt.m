@@ -56,11 +56,13 @@
     
     NSData *jsonData = [strJSON dataUsingEncoding:NSUTF8StringEncoding];
     
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     [[UNIRest postEntity:^(UNIBodyRequest *bodyRequest) {
         [bodyRequest setUrl:[NSString stringWithFormat:@"%@/oauth/token",DEF_trakt_base_url]];
         [bodyRequest setHeaders:headers];
         [bodyRequest setBody:jsonData];
     }]asJsonAsync:^(UNIHTTPJsonResponse *jsonResponse, NSError *error) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         if (error) {
             onComplete(@{@"success":@0, @"message":@"Erro ao requisitar o token de acesso"});
             NSLog(@"Token Error");
@@ -124,6 +126,7 @@
 
 - (void)downloadWatchedListOnComplete:(void (^) (NSDictionary* dicReturn))onComplete{
     
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     [[UNIRest get:^(UNISimpleRequest *simpleRequest) {
         [simpleRequest setUrl:[NSString stringWithFormat:@"%@sync/watched/shows",DEF_trakt_base_api_url]];
         
@@ -132,6 +135,8 @@
                                     @"trakt-api-key":DEF_trakt_client_id,
                                     @"Authorization":[NSString stringWithFormat:@"Bearer %@",[MTSTrakt sharedMTSTrakt].accessToken]}];
     }] asJsonAsync:^(UNIHTTPJsonResponse *jsonResponse, NSError *error) {
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         
         if (error) {
             onComplete(@{@"success":@0, @"message":[NSString stringWithFormat:@"Erro ao requisitar a lista de séries assistidas [%@]",error.localizedDescription]});
@@ -186,6 +191,7 @@
 
 - (void)downloadSeasonsFromShow:(MTSShow *)pShow OnComplete:(void (^) (NSDictionary* dicReturn))onComplete{
     
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     [[UNIRest get:^(UNISimpleRequest *simpleRequest) {
         [simpleRequest setUrl:[NSString stringWithFormat:@"%@shows/%@/seasons?extended=episodes",DEF_trakt_base_api_url,pShow.showIds.slug]];
         
@@ -194,6 +200,8 @@
                                     @"trakt-api-key":DEF_trakt_client_id,
                                     @"Authorization":[NSString stringWithFormat:@"Bearer %@",[MTSTrakt sharedMTSTrakt].accessToken]}];
     }] asJsonAsync:^(UNIHTTPJsonResponse *jsonResponse, NSError *error) {
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         
         if (error) {
             onComplete(@{@"success":@0, @"message":[NSString stringWithFormat:@"Erro ao requisitar os temporadas da série [%@]",error.localizedDescription]});
@@ -232,7 +240,7 @@
     
     NSData *jsonData = [strJSON dataUsingEncoding:NSUTF8StringEncoding];
     
-    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     [[UNIRest postEntity:^(UNIBodyRequest *bodyRequest) {
         [bodyRequest setUrl:[NSString stringWithFormat:@"%@sync/history",DEF_trakt_base_api_url]];
         
@@ -244,6 +252,9 @@
         [bodyRequest setBody:jsonData];
         
     }] asJsonAsync:^(UNIHTTPJsonResponse *jsonResponse, NSError *error) {
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        
         if ([[[jsonResponse.body.object objectForKey:@"added"] objectForKey:@"episodes"] intValue] > 0) {
             [watched saveData];
             onComplete(@{@"success":@1, @"message":@"Sucesso"});
@@ -275,6 +286,7 @@
     
     NSData *jsonData = [strJSON dataUsingEncoding:NSUTF8StringEncoding];
     
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     [[UNIRest postEntity:^(UNIBodyRequest *bodyRequest) {
         [bodyRequest setUrl:[NSString stringWithFormat:@"%@sync/history/remove",DEF_trakt_base_api_url]];
@@ -287,6 +299,9 @@
         [bodyRequest setBody:jsonData];
         
     }] asJsonAsync:^(UNIHTTPJsonResponse *jsonResponse, NSError *error) {
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        
         if ([[[jsonResponse.body.object objectForKey:@"deleted"] objectForKey:@"episodes"] intValue] > 0) {
             [pEpisode.watched deleteData];
             onComplete(@{@"success":@1, @"message":@"Sucesso"});
@@ -301,6 +316,8 @@
 
 - (void)getTrendingListOnComplete:(void (^) (NSArray* arrayShows))onComplete{
     
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
     [[UNIRest get:^(UNISimpleRequest *simpleRequest) {
         [simpleRequest setUrl:[NSString stringWithFormat:@"%@shows/trending",DEF_trakt_base_api_url]];
         
@@ -309,6 +326,9 @@
                                     @"trakt-api-key":DEF_trakt_client_id,
                                     @"Authorization":[NSString stringWithFormat:@"Bearer %@",[MTSTrakt sharedMTSTrakt].accessToken]}];
     }] asJsonAsync:^(UNIHTTPJsonResponse *jsonResponse, NSError *error) {
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        
         NSMutableArray*arrayShows = [NSMutableArray new];
         
         for (NSDictionary *dicData in jsonResponse.body.array) {
@@ -323,6 +343,9 @@
 
 - (void)getShowsWithQuery:(NSString *)pQuery OnComplete:(void (^) (NSArray* arrayShows))onComplete{
     
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
     [[UNIRest get:^(UNISimpleRequest *simpleRequest) {
         [simpleRequest setUrl:[NSString stringWithFormat:@"%@search/movie?query=%@",DEF_trakt_base_api_url,pQuery]];
         
@@ -331,6 +354,9 @@
                                     @"trakt-api-key":DEF_trakt_client_id,
                                     @"Authorization":[NSString stringWithFormat:@"Bearer %@",[MTSTrakt sharedMTSTrakt].accessToken]}];
     }] asJsonAsync:^(UNIHTTPJsonResponse *jsonResponse, NSError *error) {
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        
         NSMutableArray*arrayShows = [NSMutableArray new];
         
         for (NSDictionary *dicData in jsonResponse.body.array) {

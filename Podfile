@@ -28,6 +28,9 @@ target 'MyTvShows' do
   # Rest 
   pod 'Unirest', '~> 1.1'
 
+  #Loading
+  pod 'LCLoadingHUD', '~> 1.0'
+
   target 'MyTvShowsTests' do
     inherit! :search_paths
     # Pods for testing

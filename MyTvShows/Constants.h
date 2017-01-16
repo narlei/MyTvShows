@@ -11,3 +11,6 @@
 #define DEF_callbackUrls      @"ios-mytvshows://redirectOAuth"
 #define DEF_trakt_base_url    @"https://trakt.tv/"
 #define DEF_trakt_base_api_url @"https://api.trakt.tv/"
+
+
+#define DEF_OBSERVER_TOKEN_RECEIVED @"DEF_OBSERVER_TOKEN_RECEIVED"

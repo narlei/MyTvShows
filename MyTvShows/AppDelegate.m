@@ -25,13 +25,8 @@
     }
     
     if (![[MTSTrakt sharedMTSTrakt] authenticateForce:NO]) {
-        [[MTSTrakt sharedMTSTrakt] downloadWatchedListOnComplete:^(NSDictionary *dicReturn) {
-            [[MTSTrakt sharedMTSTrakt] downloadAllShowsOnComplete:^(NSDictionary *dicReturn) {
-                
-            }];
-        }];
+        
     }
-    
     
     
     
@@ -49,11 +44,8 @@
     [MTSTrakt sharedMTSTrakt].authCode = authCode;
     
     [[MTSTrakt sharedMTSTrakt] getTokenOnComplete:^(NSDictionary *dicReturn) {
-        [[MTSTrakt sharedMTSTrakt] downloadWatchedListOnComplete:^(NSDictionary *dicReturn) {
-            [[MTSTrakt sharedMTSTrakt] downloadAllShowsOnComplete:^(NSDictionary *dicReturn) {
-                
-            }];
-        }];
+        [[NSNotificationCenter defaultCenter] postNotificationName:DEF_OBSERVER_TOKEN_RECEIVED object:dicReturn];
+        
     }];
     
     return YES;

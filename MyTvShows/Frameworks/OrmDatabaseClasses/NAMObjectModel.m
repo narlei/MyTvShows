@@ -118,6 +118,7 @@
     [self saveDataWithValues:dicData
                      inTable:[self.class tableName]
                   onComplete:^(FMDatabase *database) {
+                      [database close];
                   }];
 }
 

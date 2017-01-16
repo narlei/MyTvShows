@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8A19956BE3338436854495C4 /* libPods-MyTvShowsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCDCE5ECA030417D4D4DFA5C /* libPods-MyTvShowsUITests.a */; };
-		8F3BF7F7A3C4A4DA7A86A60C /* libPods-MyTvShowsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 774D54B00B3AF19E86FF5DEC /* libPods-MyTvShowsTests.a */; };
+		1E35E9047242AC81F656BCFF /* libPods-MyTvShowsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF504F14428540F63AB6BE07 /* libPods-MyTvShowsUITests.a */; };
+		23626E991CE23E1D18729E5D /* libPods-MyTvShowsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83FB0A58B1DCA60E40130070 /* libPods-MyTvShowsTests.a */; };
+		65CE6482523C5DDB28C04306 /* libPods-MyTvShows.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B19F956B24A62205479ADD27 /* libPods-MyTvShows.a */; };
+		9C13F7C01E2A4F7700BFFB7E /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C13F7BF1E2A4F7700BFFB7E /* Media.xcassets */; };
+		9C13F7C31E2A505C00BFFB7E /* MyTvShowsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C13F7C21E2A505C00BFFB7E /* MyTvShowsViewController.m */; };
+		9C13F7C61E2A50C400BFFB7E /* ShowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C13F7C51E2A50C400BFFB7E /* ShowCell.m */; };
+		9C13F7C91E2A516A00BFFB7E /* MTSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C13F7C81E2A516A00BFFB7E /* MTSBaseViewController.m */; };
 		9C1ED8551E27D0C400E4D694 /* database.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 9C1ED84D1E27D0C400E4D694 /* database.sqlite */; };
 		9C1ED8561E27D0C400E4D694 /* NAMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1ED84F1E27D0C400E4D694 /* NAMDatabase.m */; };
 		9C1ED8571E27D0C400E4D694 /* NAMDatabaseClasses.nam in Resources */ = {isa = PBXBuildFile; fileRef = 9C1ED8501E27D0C400E4D694 /* NAMDatabaseClasses.nam */; };
@@ -18,6 +23,8 @@
 		9C1ED8671E27D12D00E4D694 /* MTSShow.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1ED8641E27D12D00E4D694 /* MTSShow.m */; };
 		9C1ED8681E27D12D00E4D694 /* MTSShowIds.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1ED8661E27D12D00E4D694 /* MTSShowIds.m */; };
 		9C1ED86C1E27D2EF00E4D694 /* MTSTrakt.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1ED86B1E27D2EF00E4D694 /* MTSTrakt.m */; };
+		9C4F98881E2CCBFC00E246F2 /* SeasonsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C4F98871E2CCBFC00E246F2 /* SeasonsList.storyboard */; };
+		9C4F988B1E2CCC0B00E246F2 /* SeasonsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F988A1E2CCC0B00E246F2 /* SeasonsListViewController.m */; };
 		9C81EEE61E2787E400137D76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C81EEE51E2787E400137D76 /* main.m */; };
 		9C81EEE91E2787E400137D76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C81EEE81E2787E400137D76 /* AppDelegate.m */; };
 		9C81EEF11E2787E400137D76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C81EEF01E2787E400137D76 /* Assets.xcassets */; };
@@ -26,12 +33,11 @@
 		9C81EF0A1E2787E400137D76 /* MyTvShowsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C81EF091E2787E400137D76 /* MyTvShowsUITests.m */; };
 		9CE083E01E2852F800036CC4 /* MTSEpisodeWatched.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE083DE1E2852F800036CC4 /* MTSEpisodeWatched.m */; };
 		9CE083E21E28DD4100036CC4 /* MTSTraktTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE083E11E28DD4100036CC4 /* MTSTraktTests.m */; };
-		9CEB40671E27D8D900577497 /* MyTvShows.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CEB40661E27D8D900577497 /* MyTvShows.storyboard */; };
+		9CEB40671E27D8D900577497 /* MyTvShowsFlux.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CEB40661E27D8D900577497 /* MyTvShowsFlux.storyboard */; };
 		9CEB40701E28405400577497 /* MTSEpisodeIds.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB40691E28405400577497 /* MTSEpisodeIds.m */; };
 		9CEB40711E28405400577497 /* MTSEpisode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB406B1E28405400577497 /* MTSEpisode.m */; };
 		9CEB40721E28405400577497 /* MTSSeasonIds.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB406D1E28405400577497 /* MTSSeasonIds.m */; };
 		9CEB40731E28405400577497 /* MTSSeason.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB406F1E28405400577497 /* MTSSeason.m */; };
-		C1B24AB4C3BD58E3EE05381A /* libPods-MyTvShows.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7956E30B1BC08D635581A4FA /* libPods-MyTvShows.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,9 +59,15 @@
 
 /* Begin PBXFileReference section */
 		29742E2761EFC3C1B2AEC9D1 /* Pods-MyTvShowsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTvShowsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyTvShowsUITests/Pods-MyTvShowsUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		774D54B00B3AF19E86FF5DEC /* libPods-MyTvShowsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyTvShowsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7956E30B1BC08D635581A4FA /* libPods-MyTvShows.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyTvShows.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		83FB0A58B1DCA60E40130070 /* libPods-MyTvShowsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyTvShowsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91C324C97BB76EA73E076115 /* Pods-MyTvShows.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTvShows.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyTvShows/Pods-MyTvShows.debug.xcconfig"; sourceTree = "<group>"; };
+		9C13F7BF1E2A4F7700BFFB7E /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		9C13F7C11E2A505C00BFFB7E /* MyTvShowsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTvShowsViewController.h; sourceTree = "<group>"; };
+		9C13F7C21E2A505C00BFFB7E /* MyTvShowsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTvShowsViewController.m; sourceTree = "<group>"; };
+		9C13F7C41E2A50C400BFFB7E /* ShowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowCell.h; sourceTree = "<group>"; };
+		9C13F7C51E2A50C400BFFB7E /* ShowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowCell.m; sourceTree = "<group>"; };
+		9C13F7C71E2A516A00BFFB7E /* MTSBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSBaseViewController.h; sourceTree = "<group>"; };
+		9C13F7C81E2A516A00BFFB7E /* MTSBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSBaseViewController.m; sourceTree = "<group>"; };
 		9C1ED84D1E27D0C400E4D694 /* database.sqlite */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = database.sqlite; sourceTree = "<group>"; };
 		9C1ED84E1E27D0C400E4D694 /* NAMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAMDatabase.h; sourceTree = "<group>"; };
 		9C1ED84F1E27D0C400E4D694 /* NAMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAMDatabase.m; sourceTree = "<group>"; };
@@ -73,6 +85,9 @@
 		9C1ED86A1E27D2EF00E4D694 /* MTSTrakt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSTrakt.h; sourceTree = "<group>"; };
 		9C1ED86B1E27D2EF00E4D694 /* MTSTrakt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSTrakt.m; sourceTree = "<group>"; };
 		9C23D49B1E278D79008DF60E /* MyTvShows-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyTvShows-Bridging-Header.h"; sourceTree = "<group>"; };
+		9C4F98871E2CCBFC00E246F2 /* SeasonsList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SeasonsList.storyboard; sourceTree = "<group>"; };
+		9C4F98891E2CCC0B00E246F2 /* SeasonsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeasonsListViewController.h; sourceTree = "<group>"; };
+		9C4F988A1E2CCC0B00E246F2 /* SeasonsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeasonsListViewController.m; sourceTree = "<group>"; };
 		9C81EEE11E2787E400137D76 /* MyTvShows.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTvShows.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C81EEE51E2787E400137D76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9C81EEE71E2787E400137D76 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -91,7 +106,7 @@
 		9CE083DE1E2852F800036CC4 /* MTSEpisodeWatched.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSEpisodeWatched.m; sourceTree = "<group>"; };
 		9CE083DF1E2852F800036CC4 /* MTSEpisodeWatched.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSEpisodeWatched.h; sourceTree = "<group>"; };
 		9CE083E11E28DD4100036CC4 /* MTSTraktTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSTraktTests.m; sourceTree = "<group>"; };
-		9CEB40661E27D8D900577497 /* MyTvShows.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyTvShows.storyboard; sourceTree = "<group>"; };
+		9CEB40661E27D8D900577497 /* MyTvShowsFlux.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyTvShowsFlux.storyboard; sourceTree = "<group>"; };
 		9CEB40681E28405400577497 /* MTSEpisodeIds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSEpisodeIds.h; sourceTree = "<group>"; };
 		9CEB40691E28405400577497 /* MTSEpisodeIds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSEpisodeIds.m; sourceTree = "<group>"; };
 		9CEB406A1E28405400577497 /* MTSEpisode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSEpisode.h; sourceTree = "<group>"; };
@@ -101,10 +116,11 @@
 		9CEB406E1E28405400577497 /* MTSSeason.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSSeason.h; sourceTree = "<group>"; };
 		9CEB406F1E28405400577497 /* MTSSeason.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSSeason.m; sourceTree = "<group>"; };
 		AEB4808D4D89FCF014E429F3 /* Pods-MyTvShows.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTvShows.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyTvShows/Pods-MyTvShows.release.xcconfig"; sourceTree = "<group>"; };
-		BCDCE5ECA030417D4D4DFA5C /* libPods-MyTvShowsUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyTvShowsUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B19F956B24A62205479ADD27 /* libPods-MyTvShows.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyTvShows.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAB6E4A060FA337F53D43145 /* Pods-MyTvShowsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTvShowsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyTvShowsTests/Pods-MyTvShowsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D072BDAA9D9D80E0388AEB9A /* Pods-MyTvShowsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTvShowsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyTvShowsTests/Pods-MyTvShowsTests.release.xcconfig"; sourceTree = "<group>"; };
 		E2457DFD43B7B4A1315396D5 /* Pods-MyTvShowsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTvShowsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyTvShowsUITests/Pods-MyTvShowsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FF504F14428540F63AB6BE07 /* libPods-MyTvShowsUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyTvShowsUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1B24AB4C3BD58E3EE05381A /* libPods-MyTvShows.a in Frameworks */,
+				65CE6482523C5DDB28C04306 /* libPods-MyTvShows.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,7 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F3BF7F7A3C4A4DA7A86A60C /* libPods-MyTvShowsTests.a in Frameworks */,
+				23626E991CE23E1D18729E5D /* libPods-MyTvShowsTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,7 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A19956BE3338436854495C4 /* libPods-MyTvShowsUITests.a in Frameworks */,
+				1E35E9047242AC81F656BCFF /* libPods-MyTvShowsUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +175,7 @@
 		9C1ED84B1E27D0B400E4D694 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9C13F7BF1E2A4F7700BFFB7E /* Media.xcassets */,
 				9C81EEF01E2787E400137D76 /* Assets.xcassets */,
 				9C81EEF21E2787E400137D76 /* LaunchScreen.storyboard */,
 				9C81EEF51E2787E400137D76 /* Info.plist */,
@@ -216,7 +233,8 @@
 		9C1ED85C1E27D0DD00E4D694 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				9CEB40661E27D8D900577497 /* MyTvShows.storyboard */,
+				9C4F98851E2CCBCE00E246F2 /* ShowsList */,
+				9C4F98861E2CCBDC00E246F2 /* SeasonsList */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -226,6 +244,8 @@
 			children = (
 				9C1ED8601E27D12000E4D694 /* MTSObjectModel.h */,
 				9C1ED8611E27D12000E4D694 /* MTSObjectModel.m */,
+				9C13F7C71E2A516A00BFFB7E /* MTSBaseViewController.h */,
+				9C13F7C81E2A516A00BFFB7E /* MTSBaseViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -237,6 +257,28 @@
 				9C1ED86B1E27D2EF00E4D694 /* MTSTrakt.m */,
 			);
 			path = MTSTrakt;
+			sourceTree = "<group>";
+		};
+		9C4F98851E2CCBCE00E246F2 /* ShowsList */ = {
+			isa = PBXGroup;
+			children = (
+				9CEB40661E27D8D900577497 /* MyTvShowsFlux.storyboard */,
+				9C13F7C11E2A505C00BFFB7E /* MyTvShowsViewController.h */,
+				9C13F7C21E2A505C00BFFB7E /* MyTvShowsViewController.m */,
+				9C13F7C41E2A50C400BFFB7E /* ShowCell.h */,
+				9C13F7C51E2A50C400BFFB7E /* ShowCell.m */,
+			);
+			name = ShowsList;
+			sourceTree = "<group>";
+		};
+		9C4F98861E2CCBDC00E246F2 /* SeasonsList */ = {
+			isa = PBXGroup;
+			children = (
+				9C4F98871E2CCBFC00E246F2 /* SeasonsList.storyboard */,
+				9C4F98891E2CCC0B00E246F2 /* SeasonsListViewController.h */,
+				9C4F988A1E2CCC0B00E246F2 /* SeasonsListViewController.m */,
+			);
+			name = SeasonsList;
 			sourceTree = "<group>";
 		};
 		9C81EED81E2787E300137D76 = {
@@ -307,9 +349,9 @@
 		BAAB12D020B5E01F099621D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7956E30B1BC08D635581A4FA /* libPods-MyTvShows.a */,
-				774D54B00B3AF19E86FF5DEC /* libPods-MyTvShowsTests.a */,
-				BCDCE5ECA030417D4D4DFA5C /* libPods-MyTvShowsUITests.a */,
+				B19F956B24A62205479ADD27 /* libPods-MyTvShows.a */,
+				83FB0A58B1DCA60E40130070 /* libPods-MyTvShowsTests.a */,
+				FF504F14428540F63AB6BE07 /* libPods-MyTvShowsUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -437,7 +479,9 @@
 				9C81EEF41E2787E400137D76 /* LaunchScreen.storyboard in Resources */,
 				9C81EEF11E2787E400137D76 /* Assets.xcassets in Resources */,
 				9C1ED8571E27D0C400E4D694 /* NAMDatabaseClasses.nam in Resources */,
-				9CEB40671E27D8D900577497 /* MyTvShows.storyboard in Resources */,
+				9C13F7C01E2A4F7700BFFB7E /* Media.xcassets in Resources */,
+				9C4F98881E2CCBFC00E246F2 /* SeasonsList.storyboard in Resources */,
+				9CEB40671E27D8D900577497 /* MyTvShowsFlux.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,10 +646,13 @@
 			files = (
 				9C1ED8581E27D0C400E4D694 /* NAMEncrypt.m in Sources */,
 				9C1ED8561E27D0C400E4D694 /* NAMDatabase.m in Sources */,
+				9C13F7C91E2A516A00BFFB7E /* MTSBaseViewController.m in Sources */,
 				9C1ED8591E27D0C400E4D694 /* NAMObjectModel.m in Sources */,
 				9CEB40701E28405400577497 /* MTSEpisodeIds.m in Sources */,
+				9C4F988B1E2CCC0B00E246F2 /* SeasonsListViewController.m in Sources */,
 				9C1ED86C1E27D2EF00E4D694 /* MTSTrakt.m in Sources */,
 				9C1ED8621E27D12000E4D694 /* MTSObjectModel.m in Sources */,
+				9C13F7C61E2A50C400BFFB7E /* ShowCell.m in Sources */,
 				9C1ED8681E27D12D00E4D694 /* MTSShowIds.m in Sources */,
 				9C1ED8671E27D12D00E4D694 /* MTSShow.m in Sources */,
 				9CEB40731E28405400577497 /* MTSSeason.m in Sources */,
@@ -613,6 +660,7 @@
 				9CEB40711E28405400577497 /* MTSEpisode.m in Sources */,
 				9CEB40721E28405400577497 /* MTSSeasonIds.m in Sources */,
 				9C81EEE61E2787E400137D76 /* main.m in Sources */,
+				9C13F7C31E2A505C00BFFB7E /* MyTvShowsViewController.m in Sources */,
 				9CE083E01E2852F800036CC4 /* MTSEpisodeWatched.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
