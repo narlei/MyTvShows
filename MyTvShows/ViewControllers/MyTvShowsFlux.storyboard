@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="s8L-2H-xcQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="s8L-2H-xcQ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,20 +9,24 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Discover Shows List View Controller-->
+        <!--Descobrir-->
         <scene sceneID="v2k-rQ-ThI">
             <objects>
-                <viewController id="7Px-7g-MtV" customClass="DiscoverShowsListViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="pt0-9p-Alw"/>
-                        <viewControllerLayoutGuide type="bottom" id="B1n-0e-HHw"/>
-                    </layoutGuides>
+                <viewController title="Descobrir" automaticallyAdjustsScrollViewInsets="NO" id="7Px-7g-MtV" customClass="DiscoverShowsListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gKA-m3-byJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="03n-ga-ein">
-                                <rect key="frame" x="-1" y="0.0" width="375" height="618"/>
+                            <searchBar contentMode="redraw" placeholder="Pesquisar" id="e93-Xm-vxq">
+                                <rect key="frame" x="-1" y="64" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="7Px-7g-MtV" id="Dt6-Ea-SXO"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="03n-ga-ein">
+                                <rect key="frame" x="-1" y="108" width="375" height="510"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -40,31 +44,34 @@
                                     <outlet property="delegate" destination="7Px-7g-MtV" id="Aac-qr-FgF"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="gray" id="FbH-9p-RJl">
+                                <rect key="frame" x="10" y="76" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Z8s-yc-17U"/>
+                    <navigationItem key="navigationItem" title="MyTvShows" id="Z8s-yc-17U"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="FbH-9p-RJl" id="awA-mA-fKK"/>
+                        <outlet property="searchBar" destination="e93-Xm-vxq" id="V4i-av-80W"/>
                         <outlet property="tableViewShows" destination="03n-ga-ein" id="XSa-TL-2ZV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R8f-YC-4pp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2601" y="114"/>
+            <point key="canvasLocation" x="1625.5" y="126.5"/>
         </scene>
-        <!--My Tv Shows View Controller-->
+        <!--Minhas Séries-->
         <scene sceneID="IcD-3B-O1O">
             <objects>
-                <viewController id="9o9-X6-mMw" customClass="MyTvShowsViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="13a-k9-q03"/>
-                        <viewControllerLayoutGuide type="bottom" id="pdp-JZ-gBa"/>
-                    </layoutGuides>
+                <viewController title="Minhas Séries" id="9o9-X6-mMw" customClass="MyTvShowsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fn9-UH-J7h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jd6-70-2bs">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="jd6-70-2bs">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -73,7 +80,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XBA-Pg-xnY" id="JnN-wF-M7B">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -86,14 +93,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="j8n-aL-wRf"/>
+                    <navigationItem key="navigationItem" title="MyTvShows" id="j8n-aL-wRf"/>
                     <connections>
                         <outlet property="tableViewShows" destination="jd6-70-2bs" id="EGU-EB-DAX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wZC-wW-w0I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1952.8" y="113.79310344827587"/>
+            <point key="canvasLocation" x="1220.5" y="126.5"/>
         </scene>
         <!--Minhas Séries-->
         <scene sceneID="uYe-cQ-C67">
@@ -112,7 +119,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OJC-d2-9aP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1953" y="-620"/>
+            <point key="canvasLocation" x="1220.625" y="-689.23333333333323"/>
         </scene>
         <!--Descobrir-->
         <scene sceneID="j73-Iy-8Fc">
@@ -131,12 +138,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="85C-aP-TAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2601" y="-620"/>
+            <point key="canvasLocation" x="1625.625" y="-689.23333333333323"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--MyTvShows-->
         <scene sceneID="wgj-yG-HJA">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="s8L-2H-xcQ" sceneMemberID="viewController">
+                <tabBarController title="MyTvShows" automaticallyAdjustsScrollViewInsets="NO" id="s8L-2H-xcQ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="p9h-tR-mY3">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -150,11 +157,16 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BlE-BT-wm4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2270" y="-1376"/>
+            <point key="canvasLocation" x="1418.75" y="-1529.6533333333332"/>
         </scene>
     </scenes>
     <resources>
         <image name="icon_discover" width="33" height="33"/>
         <image name="icon_my_shows" width="33" height="33"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
 </document>

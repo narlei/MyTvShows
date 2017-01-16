@@ -16,6 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.notification = [CWStatusBarNotification new];
+    self.notification.notificationLabelBackgroundColor = [UIColor whiteColor];
+    self.notification.notificationLabelTextColor = [UIColor blackColor];
     // Do any additional setup after loading the view.
     
     // Configuração da Barra de Navegação

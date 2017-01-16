@@ -1,4 +1,5 @@
 PODS:
+  - CWStatusBarNotification (2.3.5)
   - EGOCache (2.1.3)
   - EGOImageLoading (0.0.1):
     - EGOCache
@@ -13,6 +14,7 @@ PODS:
   - Unirest (1.1.4)
 
 DEPENDENCIES:
+  - CWStatusBarNotification (~> 2.3)
   - EGOCache (~> 2.1)
   - EGOImageLoading (~> 0.0)
   - EGOPhotoViewer (~> 0.0)
@@ -23,6 +25,7 @@ DEPENDENCIES:
   - Unirest (~> 1.1)
 
 SPEC CHECKSUMS:
+  CWStatusBarNotification: 3d2738b25c3207f60cc50201388d3c96182545ff
   EGOCache: f0295dbe041156acabd39021354ad1045ee49e72
   EGOImageLoading: 99d7c4a9fb5a192ab37979b63ea03efc7097fe8e
   EGOPhotoViewer: c591cf605e5b0ff51db5f69030859877376dfba7
@@ -32,6 +35,6 @@ SPEC CHECKSUMS:
   TPKeyboardAvoiding: 0d6af20e95e2850f4c621841225b59ec7d8dd852
   Unirest: 5e4d93eaf32463bf619a4ecd3bbc8c32acf21eac
 
-PODFILE CHECKSUM: a7bc1dd50bc9067f296fb28bc5617cac9378c56f
+PODFILE CHECKSUM: 6c40fd5c040ee2e134504d863671acf7d17caace
 
 COCOAPODS: 1.2.0.beta.3

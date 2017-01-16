@@ -23,7 +23,7 @@
 
 -(void)setEpisode:(MTSEpisode *)episode{
     _episode = episode;
-    self.labelTitle.text = episode.title;
+    self.labelTitle.text = [NSString stringWithFormat:@"#%@ %@",episode.number,episode.title];
     self.switchWatched.on = (episode.watched != nil);
     
 }

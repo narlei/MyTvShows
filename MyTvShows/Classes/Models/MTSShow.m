@@ -87,5 +87,8 @@
     return __arraySeasons;
 }
 
+- (void) reloadArraySeasons{
+    __arraySeasons = [MTSSeason getAllDataWhere:[NSString stringWithFormat:@"showId = %@",self.traktId]];
+}
 
 @end

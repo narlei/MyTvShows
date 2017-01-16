@@ -23,7 +23,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [LCLoadingHUD showLoading:@"Carregando" inView:self.view];
+    //    [LCLoadingHUD showLoading:@"Carregando" inView:self.view];
+    
+    [self.notification displayNotificationWithMessage:@"Buscando novos dados..." completion:nil];
+    
     
     if (![[MTSTrakt sharedMTSTrakt] authenticateForce:NO]) {
         [self loadData];
@@ -46,23 +49,33 @@
 #pragma mark - Data
 
 - (void)loadData {
-    [self.tableViewShows reloadData];
+    
+    [self refreshData];
+    
     [[MTSTrakt sharedMTSTrakt] downloadWatchedListOnComplete:^(NSDictionary *dicReturn) {
         if (![[MTSTrakt sharedMTSTrakt] showError:dicReturn]) {
             [[MTSTrakt sharedMTSTrakt] downloadAllShowsOnComplete:^(NSDictionary *dicReturn) {
+            
                 [[MTSTrakt sharedMTSTrakt] showError:dicReturn];
                 
-                self.arrayAllValues = [[NSMutableArray alloc] initWithArray:[MTSShow getAllDataWhere:@"traktId IN (SELECT DISTINCT showId FROM MTSEpisodeWatched)"]];
-                self.arrayValues = [[NSMutableArray alloc] initWithArray:self.arrayAllValues];
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [LCLoadingHUD hideInView:self.view];
-                    [self.tableViewShows reloadData];
-                });
+                [self refreshData];
+                [self.notification dismissNotification];
             }];
         }else{
             [LCLoadingHUD hideInView:self.view];
+            [self.notification dismissNotification];
         }
     }];
+}
+
+-(void) refreshData{
+    self.arrayAllValues = [[NSMutableArray alloc] initWithArray:[MTSShow getAllDataWhere:@"traktId IN (SELECT DISTINCT showId FROM MTSEpisodeWatched)"]];
+    self.arrayValues = [[NSMutableArray alloc] initWithArray:self.arrayAllValues];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        //                    [LCLoadingHUD hideInView:self.view];
+        
+        [self.tableViewShows reloadData];
+    });
 }
 
 #pragma TableView Methods

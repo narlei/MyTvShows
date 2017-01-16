@@ -12,7 +12,7 @@
 #import "LCLoadingHUD.h"
 #import "SeasonsListViewController.h"
 
-@interface DiscoverShowsListViewController ()
+@interface DiscoverShowsListViewController ()<UISearchBarDelegate,UIScrollViewDelegate>
 @property(strong, nonatomic) NSMutableArray *arrayValues;
 @property(strong, nonatomic) NSMutableArray *arrayAllValues;
 @end
@@ -24,6 +24,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.searchBar.showsCancelButton = YES;
     
     [LCLoadingHUD showLoading:@"Carregando" inView:self.view];
     
@@ -89,5 +91,37 @@
     return self.arrayValues.count;
 }
 
+#pragma mark - SearchBar Delegate
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [self.activityIndicator startAnimating];
+    [[MTSTrakt sharedMTSTrakt] getShowsWithQuery:searchBar.text OnComplete:^(NSArray *arrayShows) {
+        
+        self.arrayAllValues = [[NSMutableArray alloc] initWithArray:arrayShows];
+        self.arrayValues = [[NSMutableArray alloc] initWithArray:self.arrayAllValues];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
+            [self.tableViewShows reloadData];
+            [self.activityIndicator stopAnimating];
+        });
+        
+    }];
+}
+
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+    [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
+}
+
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    if (searchBar.text.length == 0) {
+        [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
+        [self.activityIndicator stopAnimating];
+    }
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
+    [self.activityIndicator stopAnimating];
+}
 
 @end

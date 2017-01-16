@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>CWStatusBarNotification.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>EGOCache.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -72,16 +77,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1B7233541287B70A57D3C9E300E24CEE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>1E0AE8E078D42D897CACEDF3E36C71D5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>21BE164D2EE5803F381DBABF37509936</key>
 		<dict>
 			<key>primary</key>
@@ -92,12 +87,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>65B2E6980E3834260815F16CD1872772</key>
+		<key>6F97224F950ACF4C0C53F41A3CE06F07</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>8642CC820CE8C5B88C113D7F47AF4BC3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B1719FB4AE6FF69AD12CFA5F1ACD8377</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,7 +112,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F8705EED937896EEAF6CF5030D4C6496</key>
+		<key>D2FAB578F44487B3F1FADB5282EF2E4E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D327F90014C93BB7C80AB2AC297500E8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F1A65A2695D96D98AC2B194732399A69</key>
 		<dict>
 			<key>primary</key>
 			<true/>

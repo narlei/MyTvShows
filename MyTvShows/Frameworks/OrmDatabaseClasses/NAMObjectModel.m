@@ -141,6 +141,12 @@
         BOOL ok = [db executeUpdate:[NSString stringWithFormat:@"INSERT OR REPLACE INTO %@ (%@) VALUES (%@)", pTableName, stringInsertFields, stringInsertValues] withParameterDictionary:dicParameters];
         if (!ok) {
             NSLog(@"ERROR_DB %@", [db lastError]);
+            if ([db lastError].code == 5) {
+                // Força o fechamento do banco e tenta novamente até conseguir inserir
+                [[NAMDatabase sharedNAMDatabase].database close];
+                NSLog(@"Tentando novamente... %@",dicParameters);
+                [self saveDataWithValues:dicParameters inTable:pTableName onComplete:onComplete];
+            }
         } else {
             onComplete(db);
         }
@@ -154,7 +160,7 @@
     [self deleteDataWithValues:dicData
                        inTable:[self.class tableName]
                     onComplete:^(FMDatabase *database){
-                        
+                        [database close];
                     }];
 }
 

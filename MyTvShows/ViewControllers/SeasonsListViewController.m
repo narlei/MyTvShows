@@ -9,6 +9,7 @@
 #import "SeasonsListViewController.h"
 #import "SeasonsListCell.h"
 #import "EpisodesListViewController.h"
+#import "LCLoadingHUD.h"
 
 @interface SeasonsListViewController ()
 
@@ -24,8 +25,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //    [LCLoadingHUD showLoading:@"Carregando" inView:self.view];
-    [self loadData];
+    [LCLoadingHUD showLoading:@"Carregando" inView:self.view];
+    
+    if (self.show.arraySeasons.count == 0) {
+        [[MTSTrakt sharedMTSTrakt] downloadSeasonsFromShow:self.show OnComplete:^(NSDictionary *dicReturn) {
+            [self.show reloadArraySeasons];
+            [self loadData];
+        }];
+    }else{
+        
+        [self loadData];
+    }
     
 }
 
@@ -47,7 +57,7 @@
     self.arrayAllValues = [[NSMutableArray alloc] initWithArray:self.show.arraySeasons];
     self.arrayValues = [[NSMutableArray alloc] initWithArray:self.arrayAllValues];
     dispatch_async(dispatch_get_main_queue(), ^{
-        //                    [LCLoadingHUD hideInView:self.view];
+        [LCLoadingHUD hideInView:self.view];
         [self.tableViewSeasons reloadData];
     });
     

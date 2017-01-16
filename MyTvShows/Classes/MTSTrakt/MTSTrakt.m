@@ -347,7 +347,9 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     [[UNIRest get:^(UNISimpleRequest *simpleRequest) {
-        [simpleRequest setUrl:[NSString stringWithFormat:@"%@search/movie?query=%@",DEF_trakt_base_api_url,pQuery]];
+        NSString *urlScaped = [pQuery stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+        
+        [simpleRequest setUrl:[NSString stringWithFormat:@"%@search/show?query=%@",DEF_trakt_base_api_url,urlScaped]];
         
         [simpleRequest setHeaders:@{@"Content-Type": @"application/json",
                                     @"trakt-api-version":@"2",

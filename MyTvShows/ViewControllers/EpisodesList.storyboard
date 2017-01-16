@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Episodes List View Controller-->
+        <!--Episódios-->
         <scene sceneID="6v7-66-Sa2">
             <objects>
-                <viewController id="3ac-DG-dcp" customClass="EpisodesListViewController" sceneMemberID="viewController">
+                <viewController title="Episódios" id="3ac-DG-dcp" customClass="EpisodesListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pje-Jr-ukC"/>
                         <viewControllerLayoutGuide type="bottom" id="D4C-pE-fVm"/>

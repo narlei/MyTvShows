@@ -11,5 +11,7 @@
 @interface DiscoverShowsListViewController : MTSBaseViewController
 
 @property (weak, nonatomic) IBOutlet UITableView *tableViewShows;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end

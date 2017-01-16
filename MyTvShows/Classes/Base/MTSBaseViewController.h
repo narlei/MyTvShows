@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CWStatusBarNotification.h"
 
 @interface MTSBaseViewController : UIViewController
 
-
+@property (strong, nonatomic) CWStatusBarNotification *notification;
 
 @end

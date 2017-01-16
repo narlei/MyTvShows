@@ -15,6 +15,8 @@
 @property (strong, nonatomic) NSNumber *traktId;
 
 @property (strong, nonatomic, readonly) NSArray *arraySeasons;
+- (void) reloadArraySeasons;
+
 
 
 - (id) initWithJSONDictionary:(NSDictionary *)dic;
