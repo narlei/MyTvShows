@@ -144,12 +144,13 @@
             return;
         }
         
+        
+        
         for (NSDictionary *dicData in jsonResponse.body.array) {
             MTSShow *show = [[MTSShow alloc] initWithJSONDictionary:[dicData objectForKey:@"show"]];
             [show saveData];
             
             for (NSDictionary *dicSeason in [dicData objectForKey:@"seasons"]) {
-                
                 NSNumber *seasonId =[dicSeason objectForKey:@"number"];
                 
                 for (NSDictionary *dicEpisodes in [dicSeason objectForKey:@"episodes"]) {
@@ -370,6 +371,36 @@
     }];
 }
 
+
+- (void)nextEpisodeOfShow:(MTSShow*)pShow OnComplete:(void (^) (NSArray* arrayShows))onComplete{
+    
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
+    [[UNIRest get:^(UNISimpleRequest *simpleRequest) {
+        
+        [simpleRequest setUrl:[NSString stringWithFormat:@"%@shows/%@/next_episode",DEF_trakt_base_api_url,pShow.showIds.slug]];
+        
+        [simpleRequest setHeaders:@{@"Content-Type": @"application/json",
+                                    @"trakt-api-version":@"2",
+                                    @"trakt-api-key":DEF_trakt_client_id,
+                                    @"Authorization":[NSString stringWithFormat:@"Bearer %@",[MTSTrakt sharedMTSTrakt].accessToken]}];
+    }] asJsonAsync:^(UNIHTTPJsonResponse *jsonResponse, NSError *error) {
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        
+        NSMutableArray*arrayShows = [NSMutableArray new];
+        
+        for (NSDictionary *dicData in jsonResponse.body.array) {
+            MTSShow *show = [[MTSShow alloc] initWithJSONDictionary:[dicData objectForKey:@"show"]];
+            [arrayShows addObject:show];
+        }
+        
+        onComplete(arrayShows);
+    }];
+}
+
+#pragma mark - Helper
 
 -(BOOL) showError:(NSDictionary *)pDicError{
     if ([[pDicError objectForKey:@"success"] isEqualToNumber:@0]) {

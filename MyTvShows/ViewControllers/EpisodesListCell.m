@@ -29,8 +29,19 @@
 }
 
 - (IBAction)actionSwitchWatched:(id)sender {
-    [[MTSTrakt sharedMTSTrakt] addToHistoryWatched:self.episode OnComplete:^(NSDictionary *dicReturn) {
-        [[MTSTrakt sharedMTSTrakt] showError:dicReturn];
-    }];
+    if (self.episode.watched) {
+        [[MTSTrakt sharedMTSTrakt] removeFromHistoryWatched:self.episode OnComplete:^(NSDictionary *dicReturn) {
+            if ([[MTSTrakt sharedMTSTrakt] showError:dicReturn]) {
+                self.switchWatched.on = !self.switchWatched.on;
+            }
+        }];
+        
+    }else{
+        [[MTSTrakt sharedMTSTrakt] addToHistoryWatched:self.episode OnComplete:^(NSDictionary *dicReturn) {
+            if ([[MTSTrakt sharedMTSTrakt] showError:dicReturn]) {
+                self.switchWatched.on = !self.switchWatched.on;
+            }
+        }];
+    }
 }
 @end

@@ -24,12 +24,6 @@
         [[NAMDatabase sharedNAMDatabase] createAllTables];
     }
     
-    if (![[MTSTrakt sharedMTSTrakt] authenticateForce:NO]) {
-        
-    }
-    
-    
-    
     return YES;
 }
 

@@ -14,6 +14,9 @@
 @interface MyTvShowsViewController ()
 @property(strong, nonatomic) NSMutableArray *arrayValues;
 @property(strong, nonatomic) NSMutableArray *arrayAllValues;
+
+// Propriedade de Refresh
+@property (weak, nonatomic) IBOutlet UIRefreshControl *refreshControl;
 @end
 
 @implementation MyTvShowsViewController
@@ -23,16 +26,45 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //    [LCLoadingHUD showLoading:@"Carregando" inView:self.view];
+    [self.notification displayNotificationWithMessage:@"Buscando novos dados..." forDuration:2];
     
-    [self.notification displayNotificationWithMessage:@"Buscando novos dados..." completion:nil];
+    // First Access
+    if ([MTSTrakt sharedMTSTrakt].authCode.length == 0) {
+        UIAlertController *alert = [UIAlertController
+                                    alertControllerWithTitle:@"Atenção"
+                                    message:@"Você será direcionado ao site Trakt.tv para efetuar o login."
+                                    preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *okButton = [UIAlertAction
+                                   actionWithTitle:@"OK"
+                                   style:UIAlertActionStyleCancel
+                                   handler:^(UIAlertAction *action) {
+                                       [self initialize];
+                                   }];
+        
+        [alert addAction:okButton];
+        
+        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
+    }else{
+        [self initialize];
+    }
     
     
+}
+
+- (void) initialize{
     if (![[MTSTrakt sharedMTSTrakt] authenticateForce:NO]) {
         [self loadData];
     }else{
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tokenReceived:) name:DEF_OBSERVER_TOKEN_RECEIVED object:nil];
     }
+    
+    // Refresh TableView
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(loadData) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refreshControl;
+    [self.tableViewShows addSubview:refreshControl];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,6 +74,7 @@
 
 - (void) tokenReceived:(NSDictionary *)pDicData{
     dispatch_async(dispatch_get_main_queue(), ^{
+        [self.notification displayNotificationWithMessage:@"Buscando novos dados..." forDuration:2];
         [self loadData];
     });
 }
@@ -52,18 +85,23 @@
     
     [self refreshData];
     
+    int countOldWatched = (int)[MTSEpisodeWatched getAllDataWhere:@"1=1"].count;
+    
     [[MTSTrakt sharedMTSTrakt] downloadWatchedListOnComplete:^(NSDictionary *dicReturn) {
-        if (![[MTSTrakt sharedMTSTrakt] showError:dicReturn]) {
-            [[MTSTrakt sharedMTSTrakt] downloadAllShowsOnComplete:^(NSDictionary *dicReturn) {
-            
-                [[MTSTrakt sharedMTSTrakt] showError:dicReturn];
-                
-                [self refreshData];
-                [self.notification dismissNotification];
-            }];
+        
+        int countNewWatched = (int)[MTSEpisodeWatched getAllDataWhere:@"1=1"].count;
+        
+        if (countNewWatched > countOldWatched) {
+            if (![[MTSTrakt sharedMTSTrakt] showError:dicReturn]) {
+                [[MTSTrakt sharedMTSTrakt] downloadAllShowsOnComplete:^(NSDictionary *dicReturn) {
+                    
+                    [[MTSTrakt sharedMTSTrakt] showError:dicReturn];
+                    
+                    [self refreshData];
+                }];
+            }
         }else{
-            [LCLoadingHUD hideInView:self.view];
-            [self.notification dismissNotification];
+            [self refreshData];
         }
     }];
 }
@@ -75,6 +113,8 @@
         //                    [LCLoadingHUD hideInView:self.view];
         
         [self.tableViewShows reloadData];
+        // Parar Refresh
+        [self.refreshControl endRefreshing];
     });
 }
 

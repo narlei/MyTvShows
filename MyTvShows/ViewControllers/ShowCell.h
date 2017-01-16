@@ -12,5 +12,7 @@
 
 
 @property (strong, nonatomic) MTSShow *show;
+@property (weak, nonatomic) IBOutlet UILabel *labelTitle;
+@property (weak, nonatomic) IBOutlet UILabel *labelStatus;
 
 @end

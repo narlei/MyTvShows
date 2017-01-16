@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyTvShows/Classes/MTSTrakt/MTSTrakt.m"
-            timestampString = "506253201.021299"
+            timestampString = "506301301.897727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "211"
-            endingLineNumber = "211"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
             landmarkName = "-downloadSeasonsFromShow:OnComplete:"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyTvShows/Classes/MTSTrakt/MTSTrakt.m"
-            timestampString = "506253201.021299"
+            timestampString = "506301301.897727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "218"
-            endingLineNumber = "218"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
             landmarkName = "-downloadSeasonsFromShow:OnComplete:"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyTvShows/Classes/MTSTrakt/MTSTrakt.m"
-            timestampString = "506253201.021299"
+            timestampString = "506301301.897727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "225"
-            endingLineNumber = "225"
+            startingLineNumber = "226"
+            endingLineNumber = "226"
             landmarkName = "-addToHistoryWatched:OnComplete:"
             landmarkType = "7">
          </BreakpointContent>
@@ -68,11 +68,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyTvShows/Classes/MTSTrakt/MTSTrakt.m"
-            timestampString = "506253201.021299"
+            timestampString = "506301301.897727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "206"
-            endingLineNumber = "206"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
             landmarkName = "-downloadSeasonsFromShow:OnComplete:"
             landmarkType = "7">
          </BreakpointContent>
@@ -84,11 +84,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyTvShows/Classes/MTSTrakt/MTSTrakt.m"
-            timestampString = "506253201.021299"
+            timestampString = "506301301.897727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
             landmarkName = "-downloadWatchedListOnComplete:"
             landmarkType = "7">
          </BreakpointContent>
@@ -100,11 +100,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyTvShows/Classes/MTSTrakt/MTSTrakt.m"
-            timestampString = "506253201.021299"
+            timestampString = "506301301.897727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "258"
-            endingLineNumber = "258"
+            startingLineNumber = "259"
+            endingLineNumber = "259"
             landmarkName = "-addToHistoryWatched:OnComplete:"
             landmarkType = "7">
          </BreakpointContent>
@@ -116,11 +116,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyTvShows/Classes/MTSTrakt/MTSTrakt.m"
-            timestampString = "506253201.021299"
+            timestampString = "506301301.897727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "252"
-            endingLineNumber = "252"
+            startingLineNumber = "253"
+            endingLineNumber = "253"
             landmarkName = "-addToHistoryWatched:OnComplete:"
             landmarkType = "7">
          </BreakpointContent>
@@ -148,11 +148,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyTvShows/ViewControllers/MyTvShowsViewController.m"
-            timestampString = "506281215.929778"
+            timestampString = "506302194.391877"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
@@ -164,11 +164,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyTvShows/ViewControllers/MyTvShowsViewController.m"
-            timestampString = "506281215.929778"
+            timestampString = "506302194.391877"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "-loadData"
             landmarkType = "7">
          </BreakpointContent>
@@ -196,11 +196,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyTvShows/ViewControllers/MyTvShowsViewController.m"
-            timestampString = "506283144.083993"
+            timestampString = "506302194.391877"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -228,11 +228,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyTvShows/Classes/MTSTrakt/MTSTrakt.m"
-            timestampString = "506285807.450024"
+            timestampString = "506301301.897727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "347"
-            endingLineNumber = "347"
+            startingLineNumber = "348"
+            endingLineNumber = "348"
             landmarkName = "-getShowsWithQuery:OnComplete:"
             landmarkType = "7">
          </BreakpointContent>
@@ -244,11 +244,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyTvShows/Classes/MTSTrakt/MTSTrakt.m"
-            timestampString = "506296430.354929"
+            timestampString = "506301301.897727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "361"
-            endingLineNumber = "361"
+            startingLineNumber = "362"
+            endingLineNumber = "362"
             landmarkName = "-getShowsWithQuery:OnComplete:"
             landmarkType = "7">
          </BreakpointContent>
@@ -260,11 +260,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyTvShows/Classes/MTSTrakt/MTSTrakt.m"
-            timestampString = "506296240.272605"
+            timestampString = "506301301.897727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "350"
-            endingLineNumber = "350"
+            startingLineNumber = "351"
+            endingLineNumber = "351"
             landmarkName = "-getShowsWithQuery:OnComplete:"
             landmarkType = "7">
          </BreakpointContent>
@@ -276,11 +276,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyTvShows/Classes/MTSTrakt/MTSTrakt.m"
-            timestampString = "506296463.699856"
+            timestampString = "506301301.897727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "352"
-            endingLineNumber = "352"
+            startingLineNumber = "353"
+            endingLineNumber = "353"
             landmarkName = "-getShowsWithQuery:OnComplete:"
             landmarkType = "7">
          </BreakpointContent>
@@ -288,7 +288,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyTvShows/Classes/Models/MTSShowIds.m"
@@ -298,6 +298,22 @@
             startingLineNumber = "28"
             endingLineNumber = "28"
             landmarkName = "-parseJSONDictionary:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTvShows/ViewControllers/MyTvShowsViewController.m"
+            timestampString = "506302218.746141"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
