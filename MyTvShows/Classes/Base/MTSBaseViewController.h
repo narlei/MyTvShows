@@ -10,6 +10,6 @@
 
 @interface MTSBaseViewController : UIViewController
 
--(BOOL) showError:(NSDictionary *)pDicError;
+
 
 @end

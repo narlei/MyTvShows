@@ -1,22 +1,24 @@
 //
-//  MyTvShowsViewController.m
+//  DiscoverShowsListViewController.m
 //  MyTvShows
 //
-//  Created by Narlei A Moreira on 14/01/17.
+//  Created by Narlei A Moreira on 16/01/17.
 //  Copyright © 2017 Narlei A Moreira. All rights reserved.
 //
 
-#import "MyTvShowsViewController.h"
+#import "DiscoverShowsListViewController.h"
+#import "LCLoadingHUD.h"
 #import "ShowCell.h"
 #import "LCLoadingHUD.h"
 #import "SeasonsListViewController.h"
 
-@interface MyTvShowsViewController ()
+@interface DiscoverShowsListViewController ()
 @property(strong, nonatomic) NSMutableArray *arrayValues;
 @property(strong, nonatomic) NSMutableArray *arrayAllValues;
 @end
 
-@implementation MyTvShowsViewController
+@implementation DiscoverShowsListViewController
+
 
 #pragma mark - ViewController Methods
 
@@ -46,22 +48,15 @@
 #pragma mark - Data
 
 - (void)loadData {
-    [self.tableViewShows reloadData];
-    [[MTSTrakt sharedMTSTrakt] downloadWatchedListOnComplete:^(NSDictionary *dicReturn) {
-        if (![[MTSTrakt sharedMTSTrakt] showError:dicReturn]) {
-            [[MTSTrakt sharedMTSTrakt] downloadAllShowsOnComplete:^(NSDictionary *dicReturn) {
-                [[MTSTrakt sharedMTSTrakt] showError:dicReturn];
-                
-                self.arrayAllValues = [[NSMutableArray alloc] initWithArray:[MTSShow getAllDataWhere:@"traktId IN (SELECT DISTINCT showId FROM MTSEpisodeWatched)"]];
-                self.arrayValues = [[NSMutableArray alloc] initWithArray:self.arrayAllValues];
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [LCLoadingHUD hideInView:self.view];
-                    [self.tableViewShows reloadData];
-                });
-            }];
-        }else{
+    [[MTSTrakt sharedMTSTrakt] getTrendingListOnComplete:^(NSArray *arrayShows) {
+        
+        self.arrayAllValues = [[NSMutableArray alloc] initWithArray:arrayShows];
+        self.arrayValues = [[NSMutableArray alloc] initWithArray:self.arrayAllValues];
+        dispatch_async(dispatch_get_main_queue(), ^{
             [LCLoadingHUD hideInView:self.view];
-        }
+            [self.tableViewShows reloadData];
+        });
+        
     }];
 }
 
@@ -93,7 +88,6 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.arrayValues.count;
 }
-
 
 
 @end

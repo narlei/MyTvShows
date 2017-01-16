@@ -35,6 +35,7 @@
 		9C81EEF41E2787E400137D76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C81EEF21E2787E400137D76 /* LaunchScreen.storyboard */; };
 		9C81EEFF1E2787E400137D76 /* MyTvShowsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C81EEFE1E2787E400137D76 /* MyTvShowsTests.m */; };
 		9C81EF0A1E2787E400137D76 /* MyTvShowsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C81EF091E2787E400137D76 /* MyTvShowsUITests.m */; };
+		9C8EC7891E2D1C3B007065B7 /* DiscoverShowsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C8EC7881E2D1C3B007065B7 /* DiscoverShowsListViewController.m */; };
 		9CE083E01E2852F800036CC4 /* MTSEpisodeWatched.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE083DE1E2852F800036CC4 /* MTSEpisodeWatched.m */; };
 		9CE083E21E28DD4100036CC4 /* MTSTraktTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE083E11E28DD4100036CC4 /* MTSTraktTests.m */; };
 		9CEB40671E27D8D900577497 /* MyTvShowsFlux.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CEB40661E27D8D900577497 /* MyTvShowsFlux.storyboard */; };
@@ -112,6 +113,8 @@
 		9C81EF051E2787E400137D76 /* MyTvShowsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyTvShowsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C81EF091E2787E400137D76 /* MyTvShowsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTvShowsUITests.m; sourceTree = "<group>"; };
 		9C81EF0B1E2787E400137D76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C8EC7871E2D1C3B007065B7 /* DiscoverShowsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverShowsListViewController.h; sourceTree = "<group>"; };
+		9C8EC7881E2D1C3B007065B7 /* DiscoverShowsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverShowsListViewController.m; sourceTree = "<group>"; };
 		9CA58D381E278E2A00A790D6 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		9CA58D391E278E6F00A790D6 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		9CE083DE1E2852F800036CC4 /* MTSEpisodeWatched.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSEpisodeWatched.m; sourceTree = "<group>"; };
@@ -277,6 +280,8 @@
 				9CEB40661E27D8D900577497 /* MyTvShowsFlux.storyboard */,
 				9C13F7C11E2A505C00BFFB7E /* MyTvShowsViewController.h */,
 				9C13F7C21E2A505C00BFFB7E /* MyTvShowsViewController.m */,
+				9C8EC7871E2D1C3B007065B7 /* DiscoverShowsListViewController.h */,
+				9C8EC7881E2D1C3B007065B7 /* DiscoverShowsListViewController.m */,
 				9C13F7C41E2A50C400BFFB7E /* ShowCell.h */,
 				9C13F7C51E2A50C400BFFB7E /* ShowCell.m */,
 			);
@@ -685,6 +690,7 @@
 				9C1ED8681E27D12D00E4D694 /* MTSShowIds.m in Sources */,
 				9C1ED8671E27D12D00E4D694 /* MTSShow.m in Sources */,
 				9CEB40731E28405400577497 /* MTSSeason.m in Sources */,
+				9C8EC7891E2D1C3B007065B7 /* DiscoverShowsListViewController.m in Sources */,
 				9C4F98971E2CD3C200E246F2 /* EpisodesListViewController.m in Sources */,
 				9C81EEE91E2787E400137D76 /* AppDelegate.m in Sources */,
 				9CEB40711E28405400577497 /* MTSEpisode.m in Sources */,

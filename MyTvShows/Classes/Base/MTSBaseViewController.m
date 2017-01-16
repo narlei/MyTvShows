@@ -33,29 +33,4 @@
     // Dispose of any resources that can be recreated.
 }
 
--(BOOL) showError:(NSDictionary *)pDicError{
-    if ([[pDicError objectForKey:@"success"] isEqualToNumber:@0]) {
-        UIAlertController *alert = [UIAlertController
-                                    alertControllerWithTitle:@"Atenção"
-                                    message:[pDicError objectForKey:@"message"]
-                                    preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction *okButton = [UIAlertAction
-                                   actionWithTitle:@"OK"
-                                   style:UIAlertActionStyleCancel
-                                   handler:^(UIAlertAction *action) {
-                                       //Handle no, thanks button
-                                   }];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [alert addAction:okButton];
-        });
-        
-        [self presentViewController:alert animated:YES completion:nil];
-        return YES;
-    }else{
-        return NO;
-    }
-}
-
 @end

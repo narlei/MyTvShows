@@ -17,13 +17,20 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 
 -(void)setEpisode:(MTSEpisode *)episode{
     _episode = episode;
-    self.textLabel.text = episode.title;
+    self.labelTitle.text = episode.title;
+    self.switchWatched.on = (episode.watched != nil);
+    
 }
 
+- (IBAction)actionSwitchWatched:(id)sender {
+    [[MTSTrakt sharedMTSTrakt] addToHistoryWatched:self.episode OnComplete:^(NSDictionary *dicReturn) {
+        [[MTSTrakt sharedMTSTrakt] showError:dicReturn];
+    }];
+}
 @end

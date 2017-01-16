@@ -45,4 +45,7 @@
 - (void)getTrendingListOnComplete:(void (^) (NSArray* arrayShows))onComplete;
 - (void)getShowsWithQuery:(NSString *)pQuery OnComplete:(void (^) (NSArray* arrayShows))onComplete;
 
+#pragma mark - Helper
+-(BOOL) showError:(NSDictionary *)pDicError;
+
 @end

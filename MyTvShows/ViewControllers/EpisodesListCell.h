@@ -11,5 +11,11 @@
 @interface EpisodesListCell : UITableViewCell
 
 @property (strong, nonatomic) MTSEpisode *episode;
+@property (weak, nonatomic) IBOutlet UILabel *labelTitle;
+@property (weak, nonatomic) IBOutlet UISwitch *switchWatched;
+@property (weak, nonatomic) IBOutlet UILabel *labelDate;
+
+- (IBAction)actionSwitchWatched:(id)sender;
+
 
 @end

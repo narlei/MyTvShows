@@ -23,7 +23,15 @@
 
 -(void)setSeason:(MTSSeason *)season{
     _season = season;
-    self.textLabel.text = [NSString stringWithFormat:@"Temporada %@",season.number];
+    self.labelTitle.text = [NSString stringWithFormat:@"Temporada %@",season.number];
+    
+    int totalWatchedInt = (int)[MTSEpisodeWatched getAllDataWhere:[NSString stringWithFormat:@"showId = %@ AND seasonId = %@",season.showId,season.number]].count;
+    
+    int percentageWatched = (totalWatchedInt * 100) / (int)season.arrayEpisodes.count;
+    
+    NSString *status = [NSString stringWithFormat:@"Status: Assistidos %d/%lu (%d%%)",totalWatchedInt,(unsigned long)season.arrayEpisodes.count,percentageWatched];
+    
+    self.labelStatus.text = status;
 }
 
 @end

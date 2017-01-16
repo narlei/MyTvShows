@@ -11,5 +11,7 @@
 @interface SeasonsListCell : UITableViewCell
 
 @property (strong, nonatomic) MTSSeason *season;
+@property (weak, nonatomic) IBOutlet UILabel *labelTitle;
+@property (weak, nonatomic) IBOutlet UILabel *labelStatus;
 
 @end
