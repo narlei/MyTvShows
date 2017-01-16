@@ -23,8 +23,33 @@
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstLaunch"];
         [[NAMDatabase sharedNAMDatabase] createAllTables];
     }
+
     
     return YES;
+}
+
+- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
+    
+    // react to shortcut item selections
+    NSLog(@"A shortcut item was pressed. It was %@.", shortcutItem.localizedTitle);
+    
+    // have we launched Deep Link Level 1
+    if ([shortcutItem.type isEqualToString:@"DISCOVER"]) {
+        [self openTabBar:1];
+    }
+    
+    // have we launched Deep Link Level 2
+    if ([shortcutItem.type isEqualToString:@"WATCH"]) {
+        [self openTabBar:0];
+    }
+    
+}
+
+- (void) openTabBar:(int)index{
+    if ([self.window.rootViewController isKindOfClass:[UITabBarController class]]) {
+        UITabBarController *tabBar = (UITabBarController *)self.window.rootViewController;
+        tabBar.selectedIndex = index;
+    }
 }
 
 - (BOOL)application:(UIApplication *)application
@@ -45,6 +70,8 @@
     return YES;
     
 }
+
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
