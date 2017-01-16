@@ -25,6 +25,10 @@
 		9C1ED86C1E27D2EF00E4D694 /* MTSTrakt.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1ED86B1E27D2EF00E4D694 /* MTSTrakt.m */; };
 		9C4F98881E2CCBFC00E246F2 /* SeasonsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C4F98871E2CCBFC00E246F2 /* SeasonsList.storyboard */; };
 		9C4F988B1E2CCC0B00E246F2 /* SeasonsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F988A1E2CCC0B00E246F2 /* SeasonsListViewController.m */; };
+		9C4F988E1E2CD23D00E246F2 /* SeasonsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F988D1E2CD23D00E246F2 /* SeasonsListCell.m */; };
+		9C4F98911E2CD3A500E246F2 /* EpisodesList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C4F98901E2CD3A500E246F2 /* EpisodesList.storyboard */; };
+		9C4F98941E2CD3B300E246F2 /* EpisodesListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F98931E2CD3B300E246F2 /* EpisodesListCell.m */; };
+		9C4F98971E2CD3C200E246F2 /* EpisodesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F98961E2CD3C200E246F2 /* EpisodesListViewController.m */; };
 		9C81EEE61E2787E400137D76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C81EEE51E2787E400137D76 /* main.m */; };
 		9C81EEE91E2787E400137D76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C81EEE81E2787E400137D76 /* AppDelegate.m */; };
 		9C81EEF11E2787E400137D76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C81EEF01E2787E400137D76 /* Assets.xcassets */; };
@@ -88,6 +92,13 @@
 		9C4F98871E2CCBFC00E246F2 /* SeasonsList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SeasonsList.storyboard; sourceTree = "<group>"; };
 		9C4F98891E2CCC0B00E246F2 /* SeasonsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeasonsListViewController.h; sourceTree = "<group>"; };
 		9C4F988A1E2CCC0B00E246F2 /* SeasonsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeasonsListViewController.m; sourceTree = "<group>"; };
+		9C4F988C1E2CD23D00E246F2 /* SeasonsListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeasonsListCell.h; sourceTree = "<group>"; };
+		9C4F988D1E2CD23D00E246F2 /* SeasonsListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeasonsListCell.m; sourceTree = "<group>"; };
+		9C4F98901E2CD3A500E246F2 /* EpisodesList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EpisodesList.storyboard; sourceTree = "<group>"; };
+		9C4F98921E2CD3B300E246F2 /* EpisodesListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EpisodesListCell.h; sourceTree = "<group>"; };
+		9C4F98931E2CD3B300E246F2 /* EpisodesListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EpisodesListCell.m; sourceTree = "<group>"; };
+		9C4F98951E2CD3C200E246F2 /* EpisodesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EpisodesListViewController.h; sourceTree = "<group>"; };
+		9C4F98961E2CD3C200E246F2 /* EpisodesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EpisodesListViewController.m; sourceTree = "<group>"; };
 		9C81EEE11E2787E400137D76 /* MyTvShows.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTvShows.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C81EEE51E2787E400137D76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9C81EEE71E2787E400137D76 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -235,6 +246,7 @@
 			children = (
 				9C4F98851E2CCBCE00E246F2 /* ShowsList */,
 				9C4F98861E2CCBDC00E246F2 /* SeasonsList */,
+				9C4F988F1E2CD39200E246F2 /* EpisodesList */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -277,8 +289,22 @@
 				9C4F98871E2CCBFC00E246F2 /* SeasonsList.storyboard */,
 				9C4F98891E2CCC0B00E246F2 /* SeasonsListViewController.h */,
 				9C4F988A1E2CCC0B00E246F2 /* SeasonsListViewController.m */,
+				9C4F988C1E2CD23D00E246F2 /* SeasonsListCell.h */,
+				9C4F988D1E2CD23D00E246F2 /* SeasonsListCell.m */,
 			);
 			name = SeasonsList;
+			sourceTree = "<group>";
+		};
+		9C4F988F1E2CD39200E246F2 /* EpisodesList */ = {
+			isa = PBXGroup;
+			children = (
+				9C4F98901E2CD3A500E246F2 /* EpisodesList.storyboard */,
+				9C4F98951E2CD3C200E246F2 /* EpisodesListViewController.h */,
+				9C4F98961E2CD3C200E246F2 /* EpisodesListViewController.m */,
+				9C4F98921E2CD3B300E246F2 /* EpisodesListCell.h */,
+				9C4F98931E2CD3B300E246F2 /* EpisodesListCell.m */,
+			);
+			name = EpisodesList;
 			sourceTree = "<group>";
 		};
 		9C81EED81E2787E300137D76 = {
@@ -481,6 +507,7 @@
 				9C1ED8571E27D0C400E4D694 /* NAMDatabaseClasses.nam in Resources */,
 				9C13F7C01E2A4F7700BFFB7E /* Media.xcassets in Resources */,
 				9C4F98881E2CCBFC00E246F2 /* SeasonsList.storyboard in Resources */,
+				9C4F98911E2CD3A500E246F2 /* EpisodesList.storyboard in Resources */,
 				9CEB40671E27D8D900577497 /* MyTvShowsFlux.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -645,6 +672,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C1ED8581E27D0C400E4D694 /* NAMEncrypt.m in Sources */,
+				9C4F98941E2CD3B300E246F2 /* EpisodesListCell.m in Sources */,
 				9C1ED8561E27D0C400E4D694 /* NAMDatabase.m in Sources */,
 				9C13F7C91E2A516A00BFFB7E /* MTSBaseViewController.m in Sources */,
 				9C1ED8591E27D0C400E4D694 /* NAMObjectModel.m in Sources */,
@@ -652,10 +680,12 @@
 				9C4F988B1E2CCC0B00E246F2 /* SeasonsListViewController.m in Sources */,
 				9C1ED86C1E27D2EF00E4D694 /* MTSTrakt.m in Sources */,
 				9C1ED8621E27D12000E4D694 /* MTSObjectModel.m in Sources */,
+				9C4F988E1E2CD23D00E246F2 /* SeasonsListCell.m in Sources */,
 				9C13F7C61E2A50C400BFFB7E /* ShowCell.m in Sources */,
 				9C1ED8681E27D12D00E4D694 /* MTSShowIds.m in Sources */,
 				9C1ED8671E27D12D00E4D694 /* MTSShow.m in Sources */,
 				9CEB40731E28405400577497 /* MTSSeason.m in Sources */,
+				9C4F98971E2CD3C200E246F2 /* EpisodesListViewController.m in Sources */,
 				9C81EEE91E2787E400137D76 /* AppDelegate.m in Sources */,
 				9CEB40711E28405400577497 /* MTSEpisode.m in Sources */,
 				9CEB40721E28405400577497 /* MTSSeasonIds.m in Sources */,

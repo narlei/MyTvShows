@@ -14,6 +14,8 @@
 @property (strong, nonatomic) MTSShowIds *showIds;
 @property (strong, nonatomic) NSNumber *traktId;
 
+@property (strong, nonatomic, readonly) NSArray *arraySeasons;
+
 
 - (id) initWithJSONDictionary:(NSDictionary *)dic;
 - (void) parseJSONDictionary:(NSDictionary *)dic;

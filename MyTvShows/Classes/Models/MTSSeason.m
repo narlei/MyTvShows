@@ -10,7 +10,9 @@
 #import "MTSEpisode.h"
 
 
-@implementation MTSSeason
+@implementation MTSSeason{
+    NSArray *__arrayEpisodes;
+}
 
 
 - (id)initWithJSONDictionary:(NSDictionary *)dic {
@@ -68,5 +70,18 @@
     return array;
 }
 
+#pragma mark - Getters and Setters
+
+
+-(void)setArrayEpisodes:(NSArray *)arrayEpisodes{
+    __arrayEpisodes = arrayEpisodes;
+}
+
+-(NSArray *)arrayEpisodes{
+    if (!__arrayEpisodes) {
+        __arrayEpisodes = [MTSEpisode getAllDataWhere:[NSString stringWithFormat:@"showId = %@ AND seasonId = %@",self.showId,self.number]];
+    }
+    return __arrayEpisodes;
+}
 
 @end

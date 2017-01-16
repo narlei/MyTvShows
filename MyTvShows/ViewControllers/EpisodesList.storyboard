@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3ac-DG-dcp">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Episodes List View Controller-->
+        <scene sceneID="6v7-66-Sa2">
+            <objects>
+                <viewController id="3ac-DG-dcp" customClass="EpisodesListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pje-Jr-ukC"/>
+                        <viewControllerLayoutGuide type="bottom" id="D4C-pE-fVm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ouD-xQ-35k">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qfJ-qf-SXB">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellEpisodesList" id="Mht-5D-mcz" customClass="EpisodesListCell">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mht-5D-mcz" id="Ug6-jF-BT3">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="3ac-DG-dcp" id="OkZ-ar-oEO"/>
+                                    <outlet property="delegate" destination="3ac-DG-dcp" id="sei-Th-Tij"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="qfJ-qf-SXB" secondAttribute="trailing" id="Aad-uN-YSQ"/>
+                            <constraint firstItem="qfJ-qf-SXB" firstAttribute="top" secondItem="ouD-xQ-35k" secondAttribute="top" id="AsA-tX-QaV"/>
+                            <constraint firstItem="D4C-pE-fVm" firstAttribute="top" secondItem="qfJ-qf-SXB" secondAttribute="bottom" id="c9f-6a-Dh7"/>
+                            <constraint firstItem="qfJ-qf-SXB" firstAttribute="leading" secondItem="ouD-xQ-35k" secondAttribute="leading" id="i4S-W2-a65"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableViewEpisodes" destination="qfJ-qf-SXB" id="RuM-d6-7IV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WyZ-hr-uup" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="205.59999999999999" y="181.25937031484258"/>
+        </scene>
+    </scenes>
+</document>

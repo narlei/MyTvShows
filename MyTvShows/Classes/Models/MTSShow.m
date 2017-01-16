@@ -11,6 +11,7 @@
 
 @implementation MTSShow{
     MTSShowIds *__showIds;
+    NSMutableArray *__arraySeasons;
 }
 
 #pragma mark - API
@@ -79,6 +80,12 @@
     return __showIds;
 }
 
+- (NSMutableArray *)arraySeasons{
+    if (!__arraySeasons) {
+        __arraySeasons = [MTSSeason getAllDataWhere:[NSString stringWithFormat:@"showId = %@",self.traktId]];
+    }
+    return __arraySeasons;
+}
 
 
 @end
