@@ -11,13 +11,13 @@
 @interface MTSSeasonIds : MTSObjectModel
 
 
+@property(strong, nonatomic) NSNumber *trakt;
+@property(strong, nonatomic) NSNumber *tvdb;
+@property(strong, nonatomic) NSNumber *tmdb;
+@property(strong, nonatomic) NSNumber *tvrage;
 
-@property (strong, nonatomic) NSNumber *trakt;
-@property (strong, nonatomic) NSNumber *tvdb;
-@property (strong, nonatomic) NSNumber *tmdb;
-@property (strong, nonatomic) NSNumber *tvrage;
+- (id)initWithJSONDictionary:(NSDictionary *)dic;
 
-- (id) initWithJSONDictionary:(NSDictionary *)dic;
-- (void) parseJSONDictionary:(NSDictionary *)dic;
+- (void)parseJSONDictionary:(NSDictionary *)dic;
 
 @end

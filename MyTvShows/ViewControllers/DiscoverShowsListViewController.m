@@ -12,7 +12,7 @@
 #import "LCLoadingHUD.h"
 #import "SeasonsListViewController.h"
 
-@interface DiscoverShowsListViewController ()<UISearchBarDelegate,UIScrollViewDelegate>
+@interface DiscoverShowsListViewController () <UISearchBarDelegate, UIScrollViewDelegate>
 @property(strong, nonatomic) NSMutableArray *arrayValues;
 @property(strong, nonatomic) NSMutableArray *arrayAllValues;
 @end
@@ -24,14 +24,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.searchBar.showsCancelButton = YES;
-    
+
     [LCLoadingHUD showLoading:@"Carregando" inView:self.view];
-    
+
     if (![[MTSTrakt sharedMTSTrakt] authenticateForce:NO]) {
         [self loadData];
-    }else{
+    } else {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tokenReceived:) name:DEF_OBSERVER_TOKEN_RECEIVED object:nil];
     }
 }
@@ -41,7 +41,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) tokenReceived:(NSDictionary *)pDicData{
+- (void)tokenReceived:(NSDictionary *)pDicData {
     dispatch_async(dispatch_get_main_queue(), ^{
         [self loadData];
     });
@@ -51,27 +51,27 @@
 
 - (void)loadData {
     [[MTSTrakt sharedMTSTrakt] getTrendingListOnComplete:^(NSArray *arrayShows) {
-        
+
         self.arrayAllValues = [[NSMutableArray alloc] initWithArray:arrayShows];
         self.arrayValues = [[NSMutableArray alloc] initWithArray:self.arrayAllValues];
         dispatch_async(dispatch_get_main_queue(), ^{
             [LCLoadingHUD hideInView:self.view];
             [self.tableViewShows reloadData];
         });
-        
+
     }];
 }
 
 #pragma TableView Methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+
     MTSShow *show = [self.arrayValues objectAtIndex:indexPath.row];
-    
+
     SeasonsListViewController *viewController = [[UIStoryboard storyboardWithName:@"SeasonsList" bundle:nil] instantiateInitialViewController];
     viewController.show = show;
     [self.navigationController pushViewController:viewController animated:YES];
-    
+
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -83,7 +83,7 @@
     cell = [tableView dequeueReusableCellWithIdentifier:@"cellShowCell"];
     ShowCell *currentCell = (ShowCell *) cell;
     currentCell.show = [self.arrayValues objectAtIndex:indexPath.row];
-    
+
     return cell;
 }
 
@@ -93,10 +93,10 @@
 
 #pragma mark - SearchBar Delegate
 
--(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     [self.activityIndicator startAnimating];
     [[MTSTrakt sharedMTSTrakt] getShowsWithQuery:searchBar.text OnComplete:^(NSArray *arrayShows) {
-        
+
         self.arrayAllValues = [[NSMutableArray alloc] initWithArray:arrayShows];
         self.arrayValues = [[NSMutableArray alloc] initWithArray:self.arrayAllValues];
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -104,22 +104,22 @@
             [self.tableViewShows reloadData];
             [self.activityIndicator stopAnimating];
         });
-        
+
     }];
 }
 
--(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
     [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
 }
 
--(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     if (searchBar.text.length == 0) {
         [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
         [self.activityIndicator stopAnimating];
     }
 }
 
--(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
     [self.activityIndicator stopAnimating];
 }

@@ -9,6 +9,6 @@
 #import "MTSBaseViewController.h"
 
 @interface MyTvShowsViewController : MTSBaseViewController
-@property (weak, nonatomic) IBOutlet UITableView *tableViewShows;
+@property(weak, nonatomic) IBOutlet UITableView *tableViewShows;
 
 @end

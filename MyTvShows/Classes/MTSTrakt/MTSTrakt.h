@@ -16,36 +16,41 @@
 
 + (instancetype)sharedMTSTrakt;
 
-@property (strong, nonatomic) NSString *authCode;
-@property (strong, nonatomic) NSString *refreshToken;
-@property (strong, nonatomic) NSNumber *createAt;
-@property (strong, nonatomic) NSString *accessToken;
-@property (strong, nonatomic) NSNumber *expiresIn;
+@property(strong, nonatomic) NSString *authCode;
+@property(strong, nonatomic) NSString *refreshToken;
+@property(strong, nonatomic) NSNumber *createAt;
+@property(strong, nonatomic) NSString *accessToken;
+@property(strong, nonatomic) NSNumber *expiresIn;
 
 
 #pragma mark - Auth
 
 - (BOOL)authenticateForce:(BOOL)pForce;
 
-- (void)getTokenOnComplete:(void (^) (NSDictionary* dicReturn))onComplete;
+- (void)getTokenOnComplete:(void (^)(NSDictionary *dicReturn))onComplete;
 
 
 #pragma mark - Sync Data
 
-- (void)downloadWatchedListOnComplete:(void (^) (NSDictionary* dicReturn))onComplete;
+- (void)downloadWatchedListOnComplete:(void (^)(NSDictionary *dicReturn))onComplete;
 
-- (void)downloadAllShowsOnComplete:(void (^) (NSDictionary* dicReturn))onComplete;
-- (void)downloadSeasonsFromShow:(MTSShow *)pShow OnComplete:(void (^) (NSDictionary* dicReturn))onComplete;
+- (void)downloadAllShowsOnComplete:(void (^)(NSDictionary *dicReturn))onComplete;
+
+- (void)downloadSeasonsFromShow:(MTSShow *)pShow OnComplete:(void (^)(NSDictionary *dicReturn))onComplete;
 
 
-- (void)addToHistoryWatched:(MTSEpisode *)pEpisode OnComplete:(void (^) (NSDictionary* dicReturn))onComplete;
-- (void)removeFromHistoryWatched:(MTSEpisode *)pEpisode OnComplete:(void (^) (NSDictionary* dicReturn))onComplete;
+- (void)addToHistoryWatched:(MTSEpisode *)pEpisode OnComplete:(void (^)(NSDictionary *dicReturn))onComplete;
+
+- (void)removeFromHistoryWatched:(MTSEpisode *)pEpisode OnComplete:(void (^)(NSDictionary *dicReturn))onComplete;
 
 #pragma mark - Get Data
-- (void)getTrendingListOnComplete:(void (^) (NSArray* arrayShows))onComplete;
-- (void)getShowsWithQuery:(NSString *)pQuery OnComplete:(void (^) (NSArray* arrayShows))onComplete;
+
+- (void)getTrendingListOnComplete:(void (^)(NSArray *arrayShows))onComplete;
+
+- (void)getShowsWithQuery:(NSString *)pQuery OnComplete:(void (^)(NSArray *arrayShows))onComplete;
 
 #pragma mark - Helper
--(BOOL) showError:(NSDictionary *)pDicError;
+
+- (BOOL)showError:(NSDictionary *)pDicError;
 
 @end

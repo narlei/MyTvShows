@@ -24,19 +24,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     [LCLoadingHUD showLoading:@"Carregando" inView:self.view];
-    
+
     if (self.show.arraySeasons.count == 0) {
         [[MTSTrakt sharedMTSTrakt] downloadSeasonsFromShow:self.show OnComplete:^(NSDictionary *dicReturn) {
             [self.show reloadArraySeasons];
             [self loadData];
         }];
-    }else{
-        
+    } else {
+
         [self loadData];
     }
-    
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,7 +44,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) tokenReceived:(NSDictionary *)pDicData{
+- (void)tokenReceived:(NSDictionary *)pDicData {
     dispatch_async(dispatch_get_main_queue(), ^{
         [self loadData];
     });
@@ -53,26 +53,26 @@
 #pragma mark - Data
 
 - (void)loadData {
-    
+
     self.arrayAllValues = [[NSMutableArray alloc] initWithArray:self.show.arraySeasons];
     self.arrayValues = [[NSMutableArray alloc] initWithArray:self.arrayAllValues];
     dispatch_async(dispatch_get_main_queue(), ^{
         [LCLoadingHUD hideInView:self.view];
         [self.tableViewSeasons reloadData];
     });
-    
+
 }
 
 #pragma TableView Methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+
     MTSSeason *season = [self.arrayValues objectAtIndex:indexPath.row];
-    
+
     EpisodesListViewController *viewController = [[UIStoryboard storyboardWithName:@"EpisodesList" bundle:nil] instantiateInitialViewController];
     viewController.season = season;
     [self.navigationController pushViewController:viewController animated:YES];
-    
+
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -84,7 +84,7 @@
     cell = [tableView dequeueReusableCellWithIdentifier:@"cellSeasonsList"];
     SeasonsListCell *currentCell = (SeasonsListCell *) cell;
     currentCell.season = [self.arrayValues objectAtIndex:indexPath.row];
-    
+
     return cell;
 }
 

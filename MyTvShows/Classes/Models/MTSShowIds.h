@@ -9,14 +9,15 @@
 
 @interface MTSShowIds : MTSObjectModel
 
-@property (strong, nonatomic) NSNumber *trakt;
-@property (strong, nonatomic) NSString *slug;
-@property (strong, nonatomic) NSNumber *tvdb;
-@property (strong, nonatomic) NSString *imdb;
-@property (strong, nonatomic) NSNumber *tmdb;
-@property (strong, nonatomic) NSNumber *tvrage;
+@property(strong, nonatomic) NSNumber *trakt;
+@property(strong, nonatomic) NSString *slug;
+@property(strong, nonatomic) NSNumber *tvdb;
+@property(strong, nonatomic) NSString *imdb;
+@property(strong, nonatomic) NSNumber *tmdb;
+@property(strong, nonatomic) NSNumber *tvrage;
 
-- (id) initWithJSONDictionary:(NSDictionary *)dic;
-- (void) parseJSONDictionary:(NSDictionary *)dic;
+- (id)initWithJSONDictionary:(NSDictionary *)dic;
+
+- (void)parseJSONDictionary:(NSDictionary *)dic;
 
 @end

@@ -10,7 +10,7 @@
 
 @interface SeasonsListViewController : MTSBaseViewController
 
-@property (strong, nonatomic) MTSShow *show;
-@property (weak, nonatomic) IBOutlet UITableView *tableViewSeasons;
+@property(strong, nonatomic) MTSShow *show;
+@property(weak, nonatomic) IBOutlet UITableView *tableViewSeasons;
 
 @end

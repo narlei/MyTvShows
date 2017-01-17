@@ -11,6 +11,6 @@
 
 @interface MTSBaseViewController : UIViewController
 
-@property (strong, nonatomic) CWStatusBarNotification *notification;
+@property(strong, nonatomic) CWStatusBarNotification *notification;
 
 @end

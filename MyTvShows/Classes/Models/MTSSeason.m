@@ -10,7 +10,7 @@
 #import "MTSEpisode.h"
 
 
-@implementation MTSSeason{
+@implementation MTSSeason {
     NSArray *__arrayEpisodes;
 }
 
@@ -60,11 +60,11 @@
 
 #pragma mark - Database
 
-+(NSArray *)primaryKeys{
++ (NSArray *)primaryKeys {
     return @[@"traktId"];
 }
 
-+ (NSArray *)ignoredProperties{
++ (NSArray *)ignoredProperties {
     NSMutableArray *array = [[NSMutableArray alloc] initWithArray:[super ignoredProperties]];
     [array addObject:@"seasonIds"];
     return array;
@@ -73,17 +73,16 @@
 #pragma mark - Getters and Setters
 
 
--(void)setArrayEpisodes:(NSArray *)arrayEpisodes{
+- (void)setArrayEpisodes:(NSArray *)arrayEpisodes {
     __arrayEpisodes = arrayEpisodes;
 }
 
--(NSArray *)arrayEpisodes{
+- (NSArray *)arrayEpisodes {
     if (!__arrayEpisodes) {
-        __arrayEpisodes = [MTSEpisode getAllDataWhere:[NSString stringWithFormat:@"showId = %@ AND seasonId = %@",self.showId,self.number]];
+        __arrayEpisodes = [MTSEpisode getAllDataWhere:[NSString stringWithFormat:@"showId = %@ AND seasonId = %@", self.showId, self.number]];
     }
     return __arrayEpisodes;
 }
-
 
 
 @end
