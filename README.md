@@ -17,6 +17,15 @@ This applications Uses:
 * NAMDatabase: https://github.com/narlei/namdatabase (My Own ORM Open Source project)
 
 
+### Features
+* Show all TV Shows watched in Trakt.tv
+* Show all featured TV Shows in Discover Tab
+* Find TV Shows
+* Mark as Watched and Unwatched
+* View watch status 
+* Add new TV Shows marking a Episode as watched
+* Open Tabs with 3D Touch Quick Actions
+
 
 ###TODO:
 
