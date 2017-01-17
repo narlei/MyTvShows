@@ -2,6 +2,21 @@
 
 This app uses Trakt.tv API to show your Tv Shows.
 
+### ScreenShots
+| Images|||
+|-----|-----|---|
+|![](ScreenShots/img_quick.PNG)|![](ScreenShots/img_myshows.PNG)|![](ScreenShots/img_discover.PNG)|
+|![](ScreenShots/img_seasons.PNG)|![](ScreenShots/img_episodes.PNG)||
+
+
+### DOCS
+
+This applications Uses:
+
+* Cocoapods Libraries
+* NAMDatabase: https://github.com/narlei/namdatabase (My Own ORM Open Source project)
+
+
 
 ###TODO:
 

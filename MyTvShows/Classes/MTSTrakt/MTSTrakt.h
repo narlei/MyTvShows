@@ -38,6 +38,7 @@
 
 - (void)downloadSeasonsFromShow:(MTSShow *)pShow OnComplete:(void (^)(NSDictionary *dicReturn))onComplete;
 
+#pragma mark History 
 
 - (void)addToHistoryWatched:(MTSEpisode *)pEpisode OnComplete:(void (^)(NSDictionary *dicReturn))onComplete;
 
