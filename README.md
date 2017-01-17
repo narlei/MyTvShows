@@ -25,6 +25,7 @@ This applications Uses:
 * View watch status 
 * Add new TV Shows marking a Episode as watched
 * Open Tabs with 3D Touch Quick Actions
+* Tv Shows data offline avaliable
 
 
 ###TODO:
